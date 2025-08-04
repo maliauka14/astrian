@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="stylesheet" href="src/styles/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Astrian</title>
+  </head>
+  <body>
+    <header class="header wrapper">
+      <img class="header__logo" src="./src/assets/logo.png" alt="logo" />
+      <nav class="header__navigation">
+        <ul class="header__navigation-items">
+          <li class="header__navigation-item">
+            <a class="header__navigation-item-link" href="#">Home</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-item-link" href="#">Our products</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-item-link" href="#">Partnership</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-item-link" href="#">Reviews</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-item-link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero wrapper">
+      <div class="hero__content">
+        <div class="hero__title-wrapper">
+          <h1 class="hero__title">
+            <mark class="hero__title_marked"> Mobile apps </mark>
+            Development
+          </h1>
+          <h3 class="hero__subtitle">
+            We craft high-performance, user-friendly mobile apps that drive
+            engagement, solve problems, and grow your business.
+          </h3>
+          <button class="connect-button hero__connect-button">
+            Connect with us
+
+            <img src="./src/assets/svg/arrow.svg" alt="arrow" />
+          </button>
+        </div>
+        <canvas id="canvas3d" style="width: 500px"></canvas>
+      </div>
+
+      <div class="hero__company-info">
+        <ul class="social-links">
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/instagram.svg" alt="instagram" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/linkedin.svg" alt="linkedin" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/dribble.svg" alt="dribble" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/behance.svg" alt="behance" /></a>
+          </li>
+        </ul>
+        <div class="hero__highlights">
+          <div class="hero__highlight">
+            <mark>2,100,000+</mark> Users Worldwide
+          </div>
+          <div class="hero__highlight">
+            <mark>170+</mark> Successful projects
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="strengths wrapper">
+      <h2 class="section-title">Expertise in Action</h2>
+      <div class="tablist strengths__tablist" role="tablist">
+        <button
+          id="tab1"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel1"
+          tabindex="0"
+          class="tab strengths__tab strengths__tab_active"
+        >
+          Energy & Logistics
+        </button>
+
+        <button
+          id="tab2"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel2"
+          tabindex="-1"
+          class="tab strengths__tab"
+        >
+          Social media
+        </button>
+
+        <button
+          id="tab3"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel3"
+          tabindex="-1"
+          class="tab strengths__tab"
+        >
+          AI
+        </button>
+
+        <button
+          id="tab4"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel4"
+          tabindex="-1"
+          class="tab strengths__tab"
+        >
+          Health
+        </button>
+
+        <button
+          id="tab5"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel5"
+          tabindex="-1"
+          class="tab strengths__tab"
+        >
+          Utilities & Office
+        </button>
+
+        <button
+          id="tab6"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel6"
+          tabindex="-1"
+          class="tab strengths__tab"
+        >
+          Privacy & Security
+        </button>
+
+        <button
+          id="tab7"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel7"
+          tabindex="0"
+          class="tab strengths__tab"
+        >
+          Entertainment
+        </button>
+
+        <button
+          id="tab8"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel8"
+          tabindex="0"
+          class="tab strengths__tab"
+        >
+          Music
+        </button>
+
+        <div class="strengths__tab-indicator"></div>
+      </div>
+
+      <div id="panel1" class="strengths__strength strengths__strength_active">
+        <h3 class="strengths_strength-name">Energy & Logistics</h3>
+        <p class="strengths_strength-description">
+          We have solid experience in building mobile apps for logistics
+          companies, oil businesses, and gas stations. Our team creates
+          easy-to-use and reliable solutions that help manage deliveries, track
+          vehicles, monitor fuel, and improve daily operations. We understand
+          the needs of these industries and build apps that make their work
+          faster and more efficient.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel2" class="strengths__strength">
+        <h3 class="strengths_strength-name">Social media</h3>
+        <p class="strengths_strength-description">
+          As an expert in mobile development, we have experience in building
+          social media apps that are now used by millions of users around the
+          world.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel3" class="strengths__strength">
+        <h3 class="strengths_strength-name">AI</h3>
+        <p class="strengths_strength-description">
+          We have strong experience developing AI-powered mobile applications
+          that deliver smart, data-driven solutions across various industries.
+          Our projects include AI food scanners that analyze images to identify
+          meals and estimate nutritional content, intelligent recommendation
+          systems, voice recognition and transcription tools, and machine
+          learning models for real-time data processing. We focus on integrating
+          advanced AI technologies with practical user interfaces to create apps
+          that are not only innovative but also useful and reliable. By
+          combining deep technical knowledge with real-world application, we
+          help businesses harness the power of AI to automate tasks, enhance
+          user experiences, and drive smarter decision-making.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel4" class="strengths__strength">
+        <h3 class="strengths_strength-name">Health</h3>
+        <p class="strengths_strength-description">
+          We have strong experience in building mobile applications for the
+          health and wellness industry. Our portfolio includes apps for tracking
+          pulse, monitoring body temperature, counting calories, and scanning
+          food using AI to provide nutritional insights. These solutions are
+          designed to help users take better control of their health by offering
+          accurate data, user-friendly interfaces, and personalized
+          recommendations. Whether it's supporting daily wellness routines or
+          helping users reach their fitness goals, our apps combine reliable
+          technology with practical design to deliver meaningful health
+          experiences. We focus on building tools that are not only functional
+          but also engaging and easy to integrate into everyday life.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel5" class="strengths__strength">
+        <h3 class="strengths_strength-name">Utilities & Office</h3>
+        <p class="strengths_strength-description">
+          We have solid experience in developing mobile solutions for the
+          Utilities & Office category. Our team has built a variety of
+          productivity tools, including PDF scanners, electronic signature apps,
+          wireless printer integrations, document scanners, and CV builders.
+          These apps are designed to make everyday tasks faster, easier, and
+          more efficient for users. Whether it's scanning and signing documents
+          on the go or creating a professional resume, we focus on delivering
+          clean, intuitive, and reliable tools that support productivity in both
+          personal and professional settings.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel6" class="strengths__strength">
+        <h3 class="strengths_strength-name">Privacy & Security</h3>
+        <p class="strengths_strength-description">
+          We have experience developing mobile applications focused on privacy
+          and security. Our projects include two-factor authentication (2FA)
+          apps, app lockers to protect sensitive data, and ad blockers that
+          enhance user privacy and browsing experience. These solutions are
+          built with security and performance in mind, helping users stay
+          protected in an increasingly digital world. We prioritize strong
+          encryption, user-friendly design, and reliable performance to ensure
+          our apps meet the highest standards of safety and trust.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel7" class="strengths__strength">
+        <h3 class="strengths_strength-name">Entertainment</h3>
+        <p class="strengths_strength-description">
+          We have experience creating engaging and fun mobile games across
+          different genres. Our team focuses on delivering high-quality
+          graphics, smooth performance, and enjoyable user experiences that keep
+          players coming back. From casual games to more interactive
+          experiences, we aim to build entertainment products that are not only
+          visually appealing but also optimized for long-term user retention and
+          satisfaction.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+      <div id="panel8" class="strengths__strength">
+        <h3 class="strengths_strength-name">Music</h3>
+        <p class="strengths_strength-description">
+          We have experience developing music-related mobile applications that
+          deliver rich audio experiences to users. Our projects include music
+          players, streaming apps, and tools for managing playlists and audio
+          libraries. We focus on creating smooth, responsive interfaces with
+          high-quality sound performance to ensure users can enjoy their
+          favorite music anytime, anywhere. Whether it's for casual listening or
+          professional use, our music apps combine technology and creativity to
+          provide a seamless audio experience.
+        </p>
+        <img src="" alt="" class="strengths_strength-icon" />
+      </div>
+    </section>
+    <section class="collaboration wrapper">
+      <h2 class="section-title collaboration__title">
+        Discover new opportunities with us
+      </h2>
+      <div class="collaboration__opportunities">
+        <div class="collaboration__opportunity">
+          <img
+            class="collaboration__opportunity-icon"
+            src="./src/assets/ui_ux_opportunity.png"
+            alt="opportunity"
+          />
+          <span class="collaboration__opportunity-title">UX/UI-Design</span>
+          <span class="collaboration__opportunity-description"
+            >Create, craft and blow up the stores with our creative design
+            team</span
+          >
+        </div>
+        <div class="collaboration__opportunity">
+          <img
+            class="collaboration__opportunity-icon"
+            src="./src/assets/ios_android_opportunity.png"
+            alt="opportunity"
+          />
+          <span class="collaboration__opportunity-title"
+            >iOS / Android development</span
+          >
+          <span class="collaboration__opportunity-description"
+            >We profile full-stack mobile development services to your business
+            needs</span
+          >
+        </div>
+        <div class="collaboration__opportunity">
+          <img
+            class="collaboration__opportunity-icon"
+            src="./src/assets/web_apps_opportunity.png"
+            alt="opportunity"
+          />
+          <span class="collaboration__opportunity-title"
+            >Web applications & landings</span
+          >
+          <span class="collaboration__opportunity-description"
+            >Engage your audience with fun reactions and interactive
+            effects</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="carousel text-carousel">
+      <div class="carousel__wrapper text-carousel__wrapper">
+        <span class="carousel__item text-carousel__item"> Innovate </span>
+
+        <span class="carousel__item text-carousel__item">
+          <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+        </span>
+        <span class="carousel__item text-carousel__item">Build</span>
+        <span class="carousel__item text-carousel__item">
+          <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+        </span>
+        <span class="carousel__item text-carousel__item">Scale</span>
+      </div>
+      <span class="carousel__item text-carousel__item">
+        <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+      </span>
+    </div>
+
+    <!-- <section class="achivements"></section> -->
+    <section class="contact-redirect wrapper">
+      <img
+        src="./src/assets/svg/contact_redirect_logo.svg"
+        alt="contact_redirect_icon"
+        class="contact-redirect__icon"
+      />
+      <h2 class="section-title contact-redirect__title">We are Astrian</h2>
+      <p class="contact-redirect__description">
+        A family of mobile apps developers and designer that can build any app
+        for you
+      </p>
+      <button class="connect-button contact-redirect__button">
+        Contact us
+        <img src="./src/assets/svg/arrow.svg" alt="arrow" />
+      </button>
+    </section>
+    <section class="countries wrapper">
+      <h2 class="section-title countries__title">
+        Our users are all over the world
+      </h2>
+      <div class="countries__logo-wrapper">
+        <img
+          src="src/assets/countries_logo.png"
+          alt="countries_logo"
+          class="countries__logo"
+        />
+        <div class="countries__logo-gradient"></div>
+      </div>
+
+      <div class="countries__content">
+        <div class="countries__country">
+          <img src="" alt="" class="countries__country-icon" />
+          <span class="countries__country-name"> </span>
+        </div>
+      </div>
+    </section>
+    <section class="partners wrapper">
+      <h2 class="section-title partners__title">Trusted by partners</h2>
+      <p class="partners__subtitle">Here’s what companies say about us</p>
+      <div class="partners__content">
+        <div class="partners__feedback">
+          <div class="partners__partner">
+            <img src="" alt="" class="partners__partner-icon" />
+            <span class="partners__partner-name"></span>
+            <span class="partners__partner-position"></span>
+          </div>
+          <p class="partners__feedback-description">
+            Astrian Tech’s team brought exceptional professionalism and
+            attention to detail to our project. They collaborated closely with
+            us, making proactive suggestions that enhanced the final solution.
+            In addition to the software development, they provided a complete
+            turnkey mobile design, delivering app mockups and UI that aligned
+            perfectly with our needs. The result was a robust, high-quality
+            product that matched every requirement. Communication was seamless -
+            they responded promptly and kept everything on track. I highly
+            recommend Astrian Tech for anyone looking for an engaged, smart, and
+            design-savvy development partner.
+          </p>
+        </div>
+        <div class="partners__feedback">
+          <div class="partners__partner">
+            <img src="" alt="" class="partners__partner-icon" />
+            <span class="partners__partner-name"></span>
+            <span class="partners__partner-position"></span>
+          </div>
+          <p class="partners__feedback-description">
+            Astrian is highly responsible and dependable - someone you can truly
+            rely on. They proactively tackle challenges as they appear, ensuring
+            a smooth and efficient process. The team communicates clearly and
+            frequently, keeping me informed at every stage. As a result, the
+            final product is polished and high quality. I strongly recommend
+            them to anyone seeking professional software development services.
+          </p>
+        </div>
+        <div class="partners__feedback">
+          <div class="partners__partner">
+            <img src="" alt="" class="partners__partner-icon" />
+            <span class="partners__partner-name"></span>
+            <span class="partners__partner-position"></span>
+          </div>
+          <p class="partners__feedback-description">
+            I reached out to Astrian Tech when we needed a reliable software
+            partner to fix recurring issues in our workflow. From day one, they
+            took full ownership - resolving unexpected technical challenges
+            swiftly and effectively. Their communication was transparent, and
+            they made a point of updating me regularly at every stage. In the
+            end, the delivered product exceeded our expectations in both
+            functionality and polish
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-redirect wrapper">
+      <h2 class="section-title contact-redirect__title">
+        The future of your industry <mark>starts here.</mark>
+        <button class="connect-button contact-redirect__button">
+          Contact us
+          <img src="./src/assets/svg/arrow.svg" alt="arrow" />
+        </button>
+      </h2>
+    </section>
+    <section class="faq wrapper">
+      <h2 class="section-title">FAQ</h2>
+
+      <div class="faq__content">
+        <div class="accordion faq__accordion">
+          <details open class="accordion__details" name="faq">
+            <summary class="accordion__summary">
+              <span
+                class="accordion__title faq__accordion-title"
+                role="term"
+                aria-details="faq-1"
+              >
+                1. Do you develop apps for both Android and iOS?
+              </span>
+            </summary>
+          </details>
+
+          <div class="accordion__content" id="faq-1" role="definition">
+            <div class="accordion__content-body">
+              <p class="faq__accordion-description">
+                Yes, our company specializes in developing high-quality mobile
+                solutions for both Android and iOS platforms. While our roots
+                are in iOS development, we have expanded our expertise to offer
+                fully cross-platform applications using modern technologies.
+                This includes not only mobile app development but also backend
+                architecture, cloud integration, and complete UI/UX design.
+                Whether you need a native app or a shared codebase for faster
+                delivery, we tailor the approach to best fit your business
+                goals.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion faq__accordion">
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">
+              <span
+                class="accordion__title faq__accordion-title"
+                role="term"
+                aria-details="faq-2"
+              >
+                2. How long does it take to develop an app?
+              </span>
+            </summary>
+          </details>
+
+          <div class="accordion__content" id="faq-2" role="definition">
+            <div class="accordion__content-body">
+              <p class="faq__accordion-description">
+                The development timeline depends largely on the app’s size,
+                complexity, and feature set. On average, our projects range from
+                2 weeks to 3–4 months. For example, a small utility app with
+                minimal features can be completed in as little as 2.5 weeks.
+                However, a more complex business solution — including features
+                like real-time data sync, admin dashboards, user authentication,
+                and backend infrastructure — can take 3 months or longer. We
+                also offer project planning support to help define realistic
+                timelines based on your needs.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion faq__accordion">
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">
+              <span
+                class="accordion__title faq__accordion-title"
+                role="term"
+                aria-details="faq-3"
+              >
+                3. Can you help with app design as well?
+              </span>
+            </summary>
+          </details>
+
+          <div class="accordion__content" id="faq-3" role="definition">
+            <div class="accordion__content-body">
+              <p class="faq__accordion-description">
+                Yes, we offer complete UI/UX design services as part of our
+                development process. Our design team focuses on creating
+                intuitive, visually engaging interfaces that offer a seamless
+                user experience. From wireframes and user flows to interactive
+                prototypes and final designs, we work closely with you to ensure
+                the app looks and feels exactly how your users expect. We also
+                consider platform-specific design guidelines to ensure your app
+                performs and feels native on both Android and iOS devices.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion faq__accordion">
+          <details class="accordion__details" name="faq">
+            <summary class="accordion__summary">
+              <span
+                class="accordion__title faq__accordion-title"
+                role="term"
+                aria-details="faq-4"
+              >
+                4. Do you offer post-launch support and updates?
+              </span>
+            </summary>
+          </details>
+
+          <div class="accordion__content" id="faq-4" role="definition">
+            <div class="accordion__content-body">
+              <p class="faq__accordion-description">
+                Absolutely. We believe that launching an app is just the
+                beginning. We offer ongoing maintenance and support packages
+                that include bug fixes, performance monitoring, feature updates,
+                and compatibility checks with new OS versions. Whether you need
+                regular updates or occasional improvements, our team stays
+                involved to make sure your app continues to deliver value to
+                your users and keeps up with evolving technology and business
+                needs
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="technologies wrapper">
+      <img
+        class="technologies__icon"
+        src="./src/assets/svg/technologies_section_logo.svg"
+        alt="technologies_icon"
+      />
+      <h2 class="section-title technologies__title">Our technologies</h2>
+      <ul class="technologies__content">
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/swift.svg"
+            alt="swift"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">Swift</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/react.svg"
+            alt="react_native"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">React Native</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/flutter.svg"
+            alt="flutter"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">Flutter</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/kotlin.svg"
+            alt="kotlin"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">Kotlin</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/firebase.svg"
+            alt="firebase"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">Firebase</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/nodejs.svg"
+            alt="node"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">Node.js</span>
+        </li>
+        <li class="technologies__technology">
+          <img
+            src="./src/assets/svg/rest.svg"
+            alt="rest"
+            class="technologies__technology-icon"
+          />
+          <span class="technologies_technology-name">REST API</span>
+        </li>
+      </ul>
+    </section>
+    <section class="information wrapper">
+      <h2 class="section-title information__title">Why to choose Astrian</h2>
+      <div class="information__content">
+        <div class="information__content-item">
+          <img
+            src="./src/assets/adapt_information.png"
+            alt="adapt_icon"
+            class="information__content-item-image"
+          />
+          <span class="information__content-item-title">We Fit Your Needs</span>
+          <p class="information__content-item-description">
+            We adapt to your tools, workflows, and timelines. Whether you need
+            us to lead the build or plug into your team, we mold our process to
+            match your rhythm — not the other way around.
+          </p>
+        </div>
+
+        <div class="information__content-item">
+          <img
+            src="./src/assets/testing_information.png"
+            alt="testing_icon"
+            class="information__content-item-image"
+          />
+          <span class="information__content-item-title">Built-in QA</span>
+          <p class="information__content-item-description">
+            Every product is tested in real usage scenarios, not just edge
+            cases. We integrate testing into development — not treat it as an
+            afterthought.
+          </p>
+        </div>
+
+        <div class="information__content-item">
+          <img
+            src="./src/assets/relationship_information.png"
+            alt="relationship_icon"
+            class="information__content-item-image"
+          />
+          <span class="information__content-item-title"
+            >Post-Launch, We're Still There</span
+          >
+          <p class="information__content-item-description">
+            Our relationship doesn’t end at release. We offer support,
+            optimization, and iteration — because version 1 is just the
+            beginning of your product journey.
+          </p>
+        </div>
+      </div>
+      <div class="information__technologies">
+        <span class="information__technology">Full-stack</span>
+        <span class="information__technology">Multiplatform development</span>
+        <span class="information__technology">UI/UX Design</span>
+        <span class="information__technology">Turnkey</span>
+        <span class="information__technology">AI</span>
+        <span class="information__technology">Support</span>
+        <span class="information__technology">Branding</span>
+        <span class="information__technology">Strategy</span>
+      </div>
+    </section>
+    <section class="contact wrapper">
+      <div class="contact__form-content">
+        <h2 class="section-title contact__form-content-title">Contact us</h2>
+        <p class="contact__form-content-description">
+          Fill out the form, and we’ll get back to you after your request is
+          processed.
+        </p>
+        <form action="" class="contact__form">
+          <input
+            name="name"
+            class="contact__form-input"
+            type="text"
+            required
+            placeholder="Name"
+          />
+          <input
+            name="email"
+            class="contact__form-input"
+            type="email"
+            required
+            placeholder="Email"
+          />
+          <input
+            name="company"
+            class="contact__form-input"
+            type="text"
+            placeholder="Company (optional)"
+          />
+          <textarea
+            required
+            name="message"
+            class="contact__form-input"
+            rows="5"
+            cols="33"
+            placeholder="Message"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="connect-button contact__form-submit-button"
+          >
+            Send <img src="./src/assets/svg/arrow.svg" alt="arrow" />
+          </button>
+        </form>
+      </div>
+      <div class="contact__steps"></div>
+    </section>
+
+    <footer class="footer wrapper">
+      <span class="footer__text"
+        >Astrian Tech - Software development company. All rights reserved</span
+      >
+      <span class="footer__text footer__gmail">Astrian@gmail.com</span>
+      <ul class="social-links">
+        <li class="social-links__link">
+          <a> <img src="./src/assets/svg/instagram.svg" alt="instagram" /></a>
+        </li>
+        <li class="social-links__link">
+          <a> <img src="./src/assets/svg/linkedin.svg" alt="linkedin" /></a>
+        </li>
+        <li class="social-links__link">
+          <a> <img src="./src/assets/svg/dribble.svg" alt="dribble" /></a>
+        </li>
+        <li class="social-links__link">
+          <a> <img src="./src/assets/svg/behance.svg" alt="behance" /></a>
+        </li>
+      </ul>
+
+      <button class="connect-button footer__connect-button">
+        Contact us
+        <img src="./src/assets/svg/arrow.svg" alt="arrow" />
+      </button>
+    </footer>
+    <script src="src/scripts/tabs.js"></script>
+    <!-- <script src="src/scripts/carousel.js"></script> -->
+    <script type="module" src="src/scripts/heroAnimation.js"></script>
+  </body>
+</html>

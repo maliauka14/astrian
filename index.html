@@ -186,7 +186,13 @@
           the needs of these industries and build apps that make their work
           faster and more efficient.
         </p>
-        <img src="" alt="" class="strengths_strength-icon" />
+        <div class="strengths_strength-icon-wrapper">
+          <img
+            src="src/assets/enery_logistic.png"
+            alt="energy & logistic"
+            class="strengths_strength-icon"
+          />
+        </div>
       </div>
       <div id="panel2" class="strengths__strength">
         <h3 class="strengths_strength-name">Social media</h3>
@@ -195,7 +201,13 @@
           social media apps that are now used by millions of users around the
           world.
         </p>
-        <img src="" alt="" class="strengths_strength-icon" />
+        <div class="strengths_strength-icon-wrapper">
+          <img
+            src="src/assets/scial_media.png"
+            alt="social media"
+            class="strengths_strength-icon"
+          />
+        </div>
       </div>
       <div id="panel3" class="strengths__strength">
         <h3 class="strengths_strength-name">AI</h3>
@@ -394,12 +406,16 @@
     <section class="partners wrapper">
       <h2 class="section-title partners__title">Trusted by partners</h2>
       <p class="partners__subtitle">Here’s what companies say about us</p>
-      <div class="partners__content">
+      <div class="partners__content hidden-scroll">
         <div class="partners__feedback">
           <div class="partners__partner">
-            <img src="" alt="" class="partners__partner-icon" />
-            <span class="partners__partner-name"></span>
-            <span class="partners__partner-position"></span>
+            <img
+              src="src/assets/appcore.png"
+              alt="appcore logo"
+              class="partners__partner-icon"
+            />
+            <span class="partners__partner-name">Alexandr Arkhipenko</span>
+            <span class="partners__partner-position">CEO, Appcore</span>
           </div>
           <p class="partners__feedback-description">
             Astrian Tech’s team brought exceptional professionalism and
@@ -416,9 +432,13 @@
         </div>
         <div class="partners__feedback">
           <div class="partners__partner">
-            <img src="" alt="" class="partners__partner-icon" />
-            <span class="partners__partner-name"></span>
-            <span class="partners__partner-position"></span>
+            <img
+              src="src/assets/applace.jpg"
+              alt="applace logo"
+              class="partners__partner-icon"
+            />
+            <span class="partners__partner-name">Artem Obabkov</span>
+            <span class="partners__partner-position">CPO & COO, Applace</span>
           </div>
           <p class="partners__feedback-description">
             Astrian is highly responsible and dependable - someone you can truly
@@ -431,9 +451,13 @@
         </div>
         <div class="partners__feedback">
           <div class="partners__partner">
-            <img src="" alt="" class="partners__partner-icon" />
-            <span class="partners__partner-name"></span>
-            <span class="partners__partner-position"></span>
+            <img
+              src="src/assets/appsalad.jpg"
+              alt="appsalad logo"
+              class="partners__partner-icon"
+            />
+            <span class="partners__partner-name">Appsalad</span>
+            <span class="partners__partner-position">appsalad.net</span>
           </div>
           <p class="partners__feedback-description">
             I reached out to Astrian Tech when we needed a reliable software
@@ -576,12 +600,32 @@
         </div>
       </div>
     </section>
+    <div class="carousel text-carousel">
+      <div class="carousel__wrapper text-carousel__wrapper">
+        <span class="carousel__item text-carousel__item"> Simple </span>
+
+        <span class="carousel__item text-carousel__item">
+          <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+        </span>
+        <span class="carousel__item text-carousel__item">Clean</span>
+        <span class="carousel__item text-carousel__item">
+          <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+        </span>
+        <span class="carousel__item text-carousel__item">Effective</span>
+      </div>
+      <span class="carousel__item text-carousel__item">
+        <img src="src/assets/svg/rhombus.svg" alt="rhombus" />
+      </span>
+    </div>
     <section class="technologies wrapper">
-      <img
-        class="technologies__icon"
-        src="./src/assets/svg/technologies_section_logo.svg"
-        alt="technologies_icon"
-      />
+      <div class="technologies__icon-wrapper">
+        <img
+          class="technologies__icon"
+          src="./src/assets/svg/technologies_section_logo.svg"
+          alt="technologies_icon"
+        />
+      </div>
+
       <h2 class="section-title technologies__title">Our technologies</h2>
       <ul class="technologies__content">
         <li class="technologies__technology">
@@ -731,9 +775,8 @@
           <textarea
             required
             name="message"
-            class="contact__form-input"
-            rows="5"
-            cols="33"
+            class="contact__form-input hidden-scroll"
+            rows="8"
             placeholder="Message"
           ></textarea>
 
@@ -745,7 +788,42 @@
           </button>
         </form>
       </div>
-      <div class="contact__steps"></div>
+      <div class="contact__steps">
+        <h3 class="contact__steps-title">What happens next?</h3>
+        <div class="contact__steps-content">
+          <span class="steps__step-name">Step 1</span>
+          <p class="steps__step-description">
+            Once we receive and review your request, we’ll reach out to clarify
+            your project goals and define the initial requirements.
+          </p>
+          <span class="steps__step-name">Step 2</span>
+          <p class="steps__step-description">
+            After analyzing your objectives, our team will put together a
+            detailed proposal outlining the scope of work, timeline, and cost
+            estimates.
+          </p>
+          <span class="steps__step-name">Step 3</span>
+          <p class="steps__step-description">
+            With everything agreed upon, we’ll get straight to work on bringing
+            your project to life!
+          </p>
+        </div>
+
+        <ul class="social-links">
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/instagram.svg" alt="instagram" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/linkedin.svg" alt="linkedin" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/dribble.svg" alt="dribble" /></a>
+          </li>
+          <li class="social-links__link">
+            <a> <img src="./src/assets/svg/behance.svg" alt="behance" /></a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <footer class="footer wrapper">
@@ -767,14 +845,9 @@
           <a> <img src="./src/assets/svg/behance.svg" alt="behance" /></a>
         </li>
       </ul>
-
-      <button class="connect-button footer__connect-button">
-        Contact us
-        <img src="./src/assets/svg/arrow.svg" alt="arrow" />
-      </button>
     </footer>
     <script src="src/scripts/tabs.js"></script>
     <!-- <script src="src/scripts/carousel.js"></script> -->
-    <script type="module" src="src/scripts/heroAnimation.js"></script>
+    <!-- <script type="module" src="src/scripts/heroAnimation.js"></script> -->
   </body>
 </html>

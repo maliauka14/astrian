@@ -16,7 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     clickedTab.setAttribute('aria-selected', 'true');
     clickedTab.setAttribute('tabindex', '0');
     const contentId = clickedTab.getAttribute('aria-controls')
-    document.querySelector(`#${contentId}`).classList.add('strengths__strength_active')
+    const targetSlide = document.querySelector(`#${contentId}`);
+    const savedScrollY = window.scrollY || window.pageYOffset;
+
+    targetSlide.scrollIntoView({
+      behavior: 'auto',
+      block: 'nearest',
+      inline: 'start'
+    });
+    window.scrollTo(0, savedScrollY);
 
     updateIndicator(clickedTab);
   }
@@ -42,5 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const active = document.querySelector('.strengths__tab_active');
     if (active) updateIndicator(active);
   });
-
 });

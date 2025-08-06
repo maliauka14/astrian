@@ -1,42 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.carousel__wrapper');
-  const container = document.querySelector('.carousel');
+  const carousels = document.querySelectorAll('.text-carousel');
 
-  // Клонируем элементы для бесконечного эффекта
-  const items = document.querySelectorAll('.carousel-item');
-  const clones = [];
+  carousels.forEach(carousel => {
+    const wrapper = carousel.querySelector('.text-carousel__wrapper');
+    const items = Array.from(wrapper.children);
 
-  items.forEach(item => {
-    const clone = item.cloneNode(true);
-    clones.push(clone);
-    track.appendChild(clone);
-  });
+    // Создаем клоны элементов для бесшовной анимации
+    const cloneSet = items.map(item => item.cloneNode(true));
+    cloneSet.forEach(clone => wrapper.appendChild(clone));
 
-  // Настройка Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        track.classList.remove('paused');
-      } else {
-        track.classList.add('paused');
+    let position = 0;
+    let animationId = null;
+    let lastTime = null;
+    const speed = 40; // px/s
+
+    // Рассчитываем ширину оригинального набора элементов
+    function getOriginalWidth() {
+      return items.reduce((sum, item) => sum + item.offsetWidth, 0);
+    }
+
+    function animate(timestamp) {
+      if (!lastTime) lastTime = timestamp;
+      const deltaTime = (timestamp - lastTime) / 1000;
+      lastTime = timestamp;
+
+      const originalWidth = getOriginalWidth();
+      position -= speed * deltaTime;
+
+      // Сброс позиции при достижении конца
+      if (Math.abs(position) >= originalWidth) {
+        position = 0;
+      }
+
+      wrapper.style.transform = `translateX(${position}px)`;
+      animationId = requestAnimationFrame(animate);
+    }
+
+    // Отслеживание видимости элемента
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animationId) {
+            lastTime = null;
+            animationId = requestAnimationFrame(animate);
+          }
+        } else {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(carousel);
+
+    // Обработка изменения размера окна
+    window.addEventListener('resize', () => {
+      if (Math.abs(position) >= getOriginalWidth()) {
+        position = 0;
       }
     });
-  }, {
-    threshold: 0.1
   });
-
-  observer.observe(container);
-
-  // Перезапуск анимации для плавности
-  setInterval(() => {
-    const first = track.firstElementChild;
-    track.style.transition = 'none';
-    track.style.transform = 'translateX(0)';
-    setTimeout(() => {
-      track.style.transition = '';
-    }, 50);
-
-    track.appendChild(first.cloneNode(true));
-    first.remove();
-  }, 10000); // Интервал = половина времени анимации
 });

@@ -19,25 +19,29 @@
       <nav class="header__navigation">
         <ul class="header__navigation-items">
           <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#">Home</a>
+            <a class="header__navigation-item-link" href="#home">Home</a>
           </li>
           <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#">Our products</a>
+            <a class="header__navigation-item-link" href="#products"
+              >Our products</a
+            >
           </li>
           <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#">Partnership</a>
+            <a class="header__navigation-item-link" href="#partnership"
+              >Partnership</a
+            >
           </li>
           <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#">Reviews</a>
+            <a class="header__navigation-item-link" href="#partners">Reviews</a>
           </li>
           <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#">FAQ</a>
+            <a class="header__navigation-item-link" href="#faq">FAQ</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <section class="hero wrapper">
+    <section id="home" class="hero wrapper">
       <div class="hero__content">
         <div class="hero__title-wrapper">
           <h1 class="hero__title">
@@ -82,7 +86,7 @@
         </div>
       </div>
     </section>
-    <section class="strengths wrapper">
+    <section id="products" class="strengths wrapper">
       <h2 class="section-title">Expertise in Action</h2>
       <div class="tablist strengths__tablist" role="tablist">
         <button
@@ -303,7 +307,7 @@
         </div>
       </div>
     </section>
-    <section class="collaboration wrapper">
+    <section id="partnership" class="collaboration wrapper">
       <h2 class="section-title collaboration__title">
         Discover new opportunities with us
       </h2>
@@ -415,7 +419,7 @@
         </div>
       </div>
     </section>
-    <section class="partners wrapper">
+    <section id="partners" class="partners wrapper">
       <h2 class="section-title partners__title">Trusted by partners</h2>
       <p class="partners__subtitle">Here’s what companies say about us</p>
       <div class="partners__content hidden-scroll">
@@ -492,7 +496,7 @@
         </button>
       </h2>
     </section>
-    <section class="faq wrapper">
+    <section id="faq" class="faq wrapper">
       <h2 class="section-title">FAQ</h2>
 
       <div class="faq__content">
@@ -869,6 +873,7 @@
       </ul>
     </footer>
     <script src="src/scripts/tabs.js"></script>
+    <script src="src/scripts/headerActiveLink.js"></script>
     <!-- <script src="src/scripts/carousel.js"></script> -->
     <!-- <script type="module" src="src/scripts/heroAnimation.js"></script> -->
   </body>

@@ -52,7 +52,10 @@
             We craft high-performance, user-friendly mobile apps that drive
             engagement, solve problems, and grow your business.
           </h3>
-          <button class="connect-button hero__connect-button">
+          <button
+            class="connect-button hero__connect-button"
+            aria-controls="modal"
+          >
             Connect with us
 
             <img src="./src/assets/svg/arrow.svg" alt="arrow" />
@@ -355,27 +358,23 @@
       </div>
     </section>
 
-    <div class="carousel text-carousel">
-      <div class="carousel__wrapper text-carousel__wrapper">
-        <span class="carousel__item text-carousel__item"> Innovate </span>
-
+    <div class="text-carousel">
+      <div class="text-carousel__wrapper">
+        <span class="text-carousel__item"> Innovate </span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item text-carousel__image"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
-
-        <span class="carousel__item text-carousel__item">Build</span>
+        <span class="text-carousel__item">Build</span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item text-carousel__image"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
-
-        <span class="carousel__item text-carousel__item">Scale</span>
-
+        <span class="text-carousel__item">Scale</span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item text-carousel__image"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
@@ -394,28 +393,398 @@
         A family of mobile apps developers and designer that can build any app
         for you
       </p>
-      <button class="connect-button contact-redirect__button">
+      <button
+        class="connect-button contact-redirect__button"
+        aria-controls="modal"
+      >
         Contact us
         <img src="./src/assets/svg/arrow.svg" alt="arrow" />
       </button>
     </section>
     <section class="countries wrapper">
-      <h2 class="section-title countries__title">
-        Our users are all over the world
-      </h2>
-      <div class="countries__logo-wrapper">
-        <img
-          src="src/assets/countries_logo.png"
-          alt="countries_logo"
-          class="countries__logo"
-        />
-        <div class="countries__logo-gradient"></div>
+      <div class="countries__title-content">
+        <h2 class="section-title countries__title">
+          Our users are all over the world
+        </h2>
+        <div class="countries__logo-wrapper">
+          <img
+            src="src/assets/countries_logo.png"
+            alt="countries_logo"
+            class="countries__logo"
+          />
+          <div class="countries__logo-gradient"></div>
+        </div>
       </div>
 
       <div class="countries__content">
         <div class="countries__country">
-          <img src="" alt="" class="countries__country-icon" />
-          <span class="countries__country-name"> </span>
+          <img
+            src="src/assets/svg/flags/albania.svg"
+            alt="Albania flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Albania</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/armenia.svg"
+            alt="Armenia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Armenia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/austria.svg"
+            alt="Austria flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Austria</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/azerbaijan.svg"
+            alt="Azerbaijan flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Azerbaijan</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/belgium.svg"
+            alt="Belgium flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Belgium</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/bulgaria.svg"
+            alt="Bulgaria flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Bulgaria</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/croatia.svg"
+            alt="Croatia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Croatia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/cyprus.svg"
+            alt="Cyprus flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Cyprus</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/czech_republic.svg"
+            alt="Czechia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Czechia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/denmark.svg"
+            alt="Denmark flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Denmark</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/estonia.svg"
+            alt="Estonia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Estonia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/finland.svg"
+            alt="Finland flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Finland</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/france.svg"
+            alt="France flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">France</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/georgia.svg"
+            alt="Georgia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Georgia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/germany.svg"
+            alt="Germany flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Germany</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/greece.svg"
+            alt="Greece flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Greece</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/hungary.svg"
+            alt="Hungary flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Hungary</span>
+        </div>
+
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/iceland.svg"
+            alt="Iceland flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Iceland</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/ireland.svg"
+            alt="Ireland flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Ireland</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/italy.svg"
+            alt="Italy flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Italy</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/kazakhstan.svg"
+            alt="Kazakhstan flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Kazakhstan</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/latvia.svg"
+            alt="Latvia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Latvia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/liechtenstein.svg"
+            alt="Liechtenstein flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Liechtenstein</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/lithuania.svg"
+            alt="Lithuania flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Lithuania</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/moldova.svg"
+            alt="Moldova flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Moldova</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/netherlands.svg"
+            alt="Netherlands flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Netherlands</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/norway.svg"
+            alt="Norway flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Norway</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/poland.svg"
+            alt="Poland flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Poland</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/portugal.svg"
+            alt="Portugal flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Portugal</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/romania.svg"
+            alt="Romania flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Romania</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/serbia.svg"
+            alt="Serbia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Serbia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/slovakia.svg"
+            alt="Slovakia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Slovakia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/slovenia.svg"
+            alt="Slovenia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Slovenia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/spain.svg"
+            alt="Spain flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Spain</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/sweden.svg"
+            alt="Sweden flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Sweden</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/switzerland.svg"
+            alt="Switzerland flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Switzerland</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/united_kingdom.svg"
+            alt="United Kingdom flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">United Kingdom</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/australia.svg"
+            alt="Australia flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Australia</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/canada.svg"
+            alt="Canada flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Canada</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/hong_kong.svg"
+            alt="Hong Kong flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Hong Kong</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/israel.svg"
+            alt="Israel flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Israel</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/japan.svg"
+            alt="Japan flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Japan</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/south_korea.svg"
+            alt="South Korea flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">South Korea</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/new_zealand.svg"
+            alt="New Zealand flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">New Zealand</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/singapore.svg"
+            alt="Singapore flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">Singapore</span>
+        </div>
+        <div class="countries__country">
+          <img
+            src="src/assets/svg/flags/united_states.svg"
+            alt="United States flag"
+            class="countries__country-icon"
+          />
+          <span class="countries__country-name">United States</span>
         </div>
       </div>
     </section>
@@ -490,7 +859,10 @@
     <section class="contact-redirect wrapper">
       <h2 class="section-title contact-redirect__title">
         The future of your industry <mark>starts here.</mark>
-        <button class="connect-button contact-redirect__button">
+        <button
+          class="connect-button contact-redirect__button"
+          aria-controls="modal"
+        >
           Contact us
           <img src="./src/assets/svg/arrow.svg" alt="arrow" />
         </button>
@@ -616,28 +988,23 @@
         </div>
       </div>
     </section>
-    <div class="carousel text-carousel">
-      <div class="carousel__wrapper text-carousel__wrapper">
-        <span class="carousel__item text-carousel__item"> Simple </span>
-
+    <div class="text-carousel">
+      <div class="text-carousel__wrapper">
+        <span class="text-carousel__item"> Simple </span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
-
-        <span class="carousel__item text-carousel__item">Clean</span>
-
+        <span class="text-carousel__item">Clean</span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
-
-        <span class="carousel__item text-carousel__item">Effective</span>
-
+        <span class="text-carousel__item">Effective</span>
         <img
-          class="carousel__item text-carousel__item-image"
+          class="text-carousel__item"
           src="src/assets/svg/rhombus.svg"
           alt="rhombus"
         />
@@ -777,7 +1144,7 @@
           Fill out the form, and we’ll get back to you after your request is
           processed.
         </p>
-        <form action="" class="contact__form">
+        <form action="" class="contact__form" novalidate>
           <input
             name="name"
             class="contact__form-input"
@@ -852,6 +1219,16 @@
       </div>
     </section>
 
+    <div id="modal" class="modal">
+      <div class="modal__container wrapper">
+        <!-- <button class="modal__close-button">
+          <span class="modal__close-button-line"></span>
+          <span class="modal__close-button-line"></span>
+        </button> -->
+        <div class="modal__content"></div>
+      </div>
+    </div>
+
     <footer class="footer wrapper">
       <span class="footer__text"
         >Astrian Tech - Software development company. All rights reserved</span
@@ -874,6 +1251,8 @@
     </footer>
     <script src="src/scripts/tabs.js"></script>
     <script src="src/scripts/headerActiveLink.js"></script>
+    <script src="src/scripts/modal.js"></script>
+    <script src="src/scripts/sendMessage.js"></script>
     <!-- <script src="src/scripts/carousel.js"></script> -->
     <!-- <script type="module" src="src/scripts/heroAnimation.js"></script> -->
   </body>

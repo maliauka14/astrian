@@ -39,6 +39,26 @@ body {
   a {
     cursor: pointer;
   }
+
+  a:hover {
+    path {
+      stroke: var(--selected-color)
+    }
+
+    circle {
+      fill: var(--selected-color)
+    }
+  }
+
+  .social-links__link:last-child {
+    a:hover {
+      path {
+        fill: var(--selected-color);
+        stroke: none
+      }
+    }
+  }
+
 }
 
 .connect-button {
@@ -180,6 +200,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 50px;
+  position: relative;
 
   &::before {
     content: "";
@@ -260,6 +281,12 @@ body {
       font-style: 'Semi Bold';
       font-size: 42px;
     }
+  }
+
+  .hero__animation {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -1005,6 +1032,7 @@ body {
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     grid-auto-flow: column;
+    overflow-x: hidden
   }
 
   .countries__country {

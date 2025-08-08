@@ -1,8 +1,9 @@
 import { activateHeaderLink } from "./activateHeaderLink";
-import { addHeroLogo } from "./addHeroLogo";
+import { addSocialLinks } from "./addSocialLinks";
 import { dragableZone } from "./dragableZone";
-import { addModal } from "./modal";
+import { addHeroLogo } from "./addHeroLogo";
 import { animateTabs } from "./tabs";
+import { addModal } from "./modal";
 
 document.addEventListener("DOMContentLoaded", () => {
   dragableZone();
@@ -10,4 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
   addHeroLogo();
   addModal();
   animateTabs();
+  addSocialLinks();
 });

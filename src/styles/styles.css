@@ -7,6 +7,11 @@
   --header-height: 83px
 }
 
+* {
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 4px);
@@ -57,7 +62,7 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 16px;
-  font-family: Inter;
+  font-family: SF Pro;
   font-weight: 400;
   font-style: Regular;
   font-size: 76px;
@@ -192,8 +197,8 @@ body {
 
   .hero__title {
     margin: 0;
-    font-weight: 300;
-    font-style: Light;
+    font-weight: 400;
+    font-family: SF Pro;
     font-size: 89px;
     line-height: 89px;
     letter-spacing: -0.89px;
@@ -516,6 +521,7 @@ body {
   }
 
   .technologies__title {
+    font-family: Inter;
     text-align: center;
     z-index: 4;
   }
@@ -1014,7 +1020,7 @@ body {
   margin-bottom: 116px;
 
   .partners__subtitle {
-    font-family: Inter;
+    font-family: SF Pro;
     font-weight: 400;
     font-style: Regular;
     font-size: 16px;
@@ -1029,6 +1035,12 @@ body {
     display: flex;
     gap: 24px;
     overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .partners__content:active {
+    cursor: grabbing;
   }
 
 

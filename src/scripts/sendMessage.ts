@@ -7,7 +7,6 @@ const messages = {
 
 const submitForm = (event: SubmitEvent) => {
   event.preventDefault();
-
   const form = event.target as HTMLFormElement;
   const invalidFields: HTMLInputElement[] = [];
 
@@ -45,7 +44,6 @@ const submitForm = (event: SubmitEvent) => {
   } else {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData.entries());
-    form.reset();
 
     const token = "7033492975:AAHN9ObTm47pDQvd6z8dN517YgFhYBFq3YQ";
     const chatId = "787697525";
@@ -56,7 +54,10 @@ const submitForm = (event: SubmitEvent) => {
         text
       )}`
     )
-      .then(() => alert("Успешно отправлено!"))
+      .then(() => {
+        alert("Успешно отправлено!");
+        form.reset();
+      })
       .catch((error) => alert("Ошибка: " + error));
 
     return;
@@ -68,6 +69,30 @@ document.addEventListener("DOMContentLoaded", () => {});
 export const sendMessage = () => {
   const form = document.querySelector<HTMLFormElement>(".contact__form");
   if (!form) throw new Error("Element contact__form not found");
-
   form.addEventListener("submit", submitForm);
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node instanceof Element) {
+          if (node.classList.contains("my-class")) {
+            node.addEventListener("click", () => {
+              console.log("Клик на новом элементе!");
+            });
+          }
+
+          const nestedElements =
+            node.querySelectorAll<HTMLFormElement>(".contact__form");
+          nestedElements.forEach((el) => {
+            el.addEventListener("submit", submitForm);
+          });
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 };

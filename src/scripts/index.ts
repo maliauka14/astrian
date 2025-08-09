@@ -5,7 +5,7 @@ import { addHeroLogo } from "./addHeroLogo";
 import { animateTabs } from "./tabs";
 import { addModal } from "./modal";
 import { sendMessage } from "./sendMessage";
-import { createTextCarousel } from "./carousel";
+import { createCarousel, createTextCarousel } from "./carousel";
 
 document.addEventListener("DOMContentLoaded", () => {
   sendMessage();
@@ -16,4 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
   animateTabs();
   addSocialLinks();
   createTextCarousel();
+  createCarousel();
 });

@@ -1,90 +1,27 @@
-// export const createCaroucel = () => {
-//   const content = document.querySelector<HTMLDivElement>(".countries__content");
-//   const topContent = document.querySelector<HTMLDivElement>(
-//     ".contries__top-content"
-//   );
-//   const bottomContent = document.querySelector<HTMLDivElement>(
-//     ".contries__bottom-content"
-//   );
+export const createCarousel = () => {
+  const carousels = document.querySelectorAll<HTMLDivElement>(".carousel");
 
-//   if (!content) throw new Error("Element countries__content not found");
-//   if (!topContent) throw new Error("Element countries__top-content not found");
-//   if (!bottomContent)
-//     throw new Error("Element countries__bottom-content not found");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("countries__content_paused");
+        } else {
+          entry.target.classList.add("countries__content_paused");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-//   const duplicateTopContent = Array.from(topContent.children).map((el) =>
-//     el.cloneNode(true)
-//   );
-//   const duplicateBottomContent = Array.from(bottomContent.children).map((el) =>
-//     el.cloneNode(true)
-//   );
-
-//   const moveElements = () => {
-//     if (topContent.children.length > 0) {
-//       const firstChild = topContent.children[0];
-//       const rect = firstChild.getBoundingClientRect();
-//       const contentRect = content.getBoundingClientRect();
-
-//       // Если элемент полностью вышел за правую границу
-//       if (rect.right < contentRect.left) {
-//         // Перемещаем элемент в конец
-//         const moved = topContent.removeChild(firstChild);
-//         topContent.appendChild(moved);
-//       }
-//     }
-
-//     // Для нижней строки (движение влево)
-//     if (bottomContent.children.length > 0) {
-//       const lastChild =
-//         bottomContent.children[bottomContent.children.length - 1];
-//       const rect = lastChild.getBoundingClientRect();
-//       const contentRect = content.getBoundingClientRect();
-
-//       // Если элемент полностью вышел за левую границу
-//       if (rect.left > contentRect.right) {
-//         // Перемещаем элемент в начало
-//         const moved = bottomContent.removeChild(lastChild);
-//         bottomContent.insertBefore(moved, bottomContent.firstChild);
-//       }
-//     }
-//   };
-
-//   let animationInterval: number | undefined;
-
-//   const startAnimation = () => {
-//     if (!animationInterval) {
-//       animationInterval = setInterval(moveElements, 1000);
-//     }
-//   };
-
-//   const stopAnimation = () => {
-//     clearInterval(animationInterval);
-//     animationInterval = undefined;
-//   };
-
-//   // Отслеживание видимости через Intersection Observer
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           content.classList.remove("countries__content_paused");
-//           startAnimation();
-//         } else {
-//           content.classList.add("countries__content_paused");
-//           stopAnimation();
-//         }
-//       });
-//     },
-//     { threshold: 0.1 }
-//   );
-
-//   observer.observe(content);
-
-//   window.addEventListener("beforeunload", () => {
-//     stopAnimation();
-//     observer.disconnect();
-//   });
-// };
+  carousels.forEach((carousel) => {
+    observer.observe(carousel);
+    Array.from(carousel.children).forEach((carouselWrapper) => {
+      const clonedContent = carouselWrapper.children[0].cloneNode(true);
+      carouselWrapper.appendChild(clonedContent);
+    });
+  });
+};
 
 export const createTextCarousel = () => {
   const carousels = document.querySelectorAll<HTMLDivElement>(".text-carousel");

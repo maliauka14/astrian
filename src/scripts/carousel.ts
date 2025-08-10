@@ -5,9 +5,9 @@ export const createCarousel = () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.remove("countries__content_paused");
+          entry.target.classList.remove("carousel_paused");
         } else {
-          entry.target.classList.add("countries__content_paused");
+          entry.target.classList.add("carousel_paused");
         }
       });
     },
@@ -37,8 +37,6 @@ export const createTextCarousel = () => {
 
     const clone = wrapper.cloneNode(true);
     inner.appendChild(clone);
-
-    wrapper.style.width = `${carousel.offsetWidth}px`;
   };
 
   const observer = new IntersectionObserver(

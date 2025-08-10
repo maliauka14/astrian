@@ -13,18 +13,18 @@ export const addHeroLogo = async () => {
   canvas.style.height = "85vh";
   canvas.style.touchAction = "auto";
 
-  // let isScrolling = false;
+  let isScrolling = false;
 
-  // canvas.addEventListener("wheel", () => {
-  //   if (!isScrolling) {
-  //     canvas.style.pointerEvents = "none";
-  //     isScrolling = true;
-  //   }
-  //   scrollEndHandler();
-  // });
-  // const scrollEndHandler = _.debounce(() => {
-  //   canvas.style.pointerEvents = "auto";
-  //   isScrolling = false;
-  // }, 250);
-  // console.log(isScrolling);
+  canvas.addEventListener("wheel", () => {
+    if (!isScrolling) {
+      canvas.style.pointerEvents = "none";
+      isScrolling = true;
+    }
+    scrollEndHandler();
+  });
+  const scrollEndHandler = _.debounce(() => {
+    canvas.style.pointerEvents = "auto";
+    isScrolling = false;
+  }, 250);
+  console.log(isScrolling);
 };

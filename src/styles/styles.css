@@ -433,13 +433,13 @@ body {
     }
 
     .strengths__strength-app-link:nth-child(3) {
-      top: 7%;
-      right: 14%;
+      bottom: 0%;
+      left: 0;
     }
 
     .strengths__strength-app-link:nth-child(4) {
-      bottom: 0%;
-      left: 0;
+      top: 7%;
+      right: 14%;
     }
 
     .strengths__strength-app-link:nth-child(5) {
@@ -471,6 +471,32 @@ body {
     background: rgba(0, 0, 0, .5);
     inset: 0;
     z-index: 2;
+  }
+
+
+  .strengths__products-carousel {
+    margin-top: 86px;
+    gap: 20px;
+  }
+
+  .strengths__top-content-wrapper,
+  .strengths__bottom-content-wrapper,
+  .strengths__product-top-content,
+  .strengths__product-bottom-content {
+    gap: 24px;
+  }
+
+  .strengths__product-top-content,
+  .strengths__product-bottom-content {
+    display: flex;
+    ;
+  }
+
+  .strengths__product-carousel-item {
+    display: inline-block;
+    width: 106px;
+    height: 106px;
+    border-radius: 20px;
   }
 
 }
@@ -1116,11 +1142,7 @@ body {
 
   .countries__content {
     margin-top: 48px;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
-
-    overflow-x: hidden
   }
 
   .countries__country {
@@ -1151,26 +1173,11 @@ body {
   .countries__bottom-content {
     display: flex;
     gap: 20px;
-    position: relative;
   }
 
-  .countries__top-content-wrapper {
-    display: flex;
-    animation: moveRight 5s linear infinite;
-  }
-
+  .countries__top-content-wrapper,
   .countries__bottom-content-wrapper {
-    display: flex;
-    transform: translateX(100%);
-    animation: moveLeft 5s linear infinite;
-  }
-
-  .countries__content_paused {
-
-    .countries__top-content-wrapper,
-    .countries__bottom-content-wrapper {
-      animation-play-state: paused;
-    }
+    gap: 20px;
   }
 }
 
@@ -1322,7 +1329,8 @@ body {
     justify-content: center;
 
     .contact {
-      margin: 0;
+      padding: 8px 0;
+      height: 100vh;
     }
   }
 }
@@ -1336,19 +1344,46 @@ body {
   }
 }
 
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  .carousel__top-content-wrapper {
+    display: flex;
+    width: max-content;
+    animation: moveRight 50s linear infinite;
+  }
+
+  .carousel__bottom-content-wrapper {
+    display: flex;
+    width: max-content;
+    animation: moveLeft 50s linear infinite;
+  }
+}
+
+.carousel_paused {
+
+  .carousel__top-content-wrapper,
+  .carousel__bottom-content-wrapper {
+    animation-play-state: paused;
+  }
+}
+
 @keyframes moveRight {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @keyframes moveLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 
   100% {

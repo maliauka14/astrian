@@ -1,0 +1,90 @@
+.technologies {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .technologies__icon-wrapper {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.67%, rgba(0, 0, 0, 0) 33.33%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 66.67%, rgba(0, 0, 0, 0.5) 83.33%, #000000 100%);
+    transform: translateY(100px);
+    margin-top: -100px;
+
+    svg {
+      overflow: hidden;
+      width: 100vw;
+    }
+  }
+
+  .technologies__title {
+    font-family: Inter;
+    text-align: center;
+    z-index: 4;
+  }
+
+  .technologies__content {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 12px;
+    position: relative;
+  }
+
+
+  .technologies__technology {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    width: 25%;
+    padding: 20px 0 36px;
+    margin: -8px 0;
+  }
+
+  .technologies__technology-icon {
+    height: 64px;
+    object-fit: none;
+    transition: transform 0.3s ease;
+    margin: 10px 0;
+  }
+
+  .technologies_technology-name {
+    opacity: 0.8;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .technologies__technology:hover {
+    .technologies__technology-icon {
+      transform: scale(calc(84 / 64));
+      height: 84px;
+    }
+
+    .technologies_technology-name {
+      color: #A594FD
+    }
+  }
+
+  .technologies__technology:hover {
+    .technologies__technology-icon {
+      transform: scale(1.3125);
+      margin: 0;
+    }
+  }
+
+  .technologies__content:has(.technologies__technology:hover) .technologies__technology:not(:hover)::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    inset: 0;
+    z-index: 2;
+  }
+}

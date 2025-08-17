@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  position: sticky;
+  padding-top: 40px;
+  top: 0;
+  background-color: var(--background);
+  z-index: 10;
+
+  .header__navigation-items {
+    display: flex;
+    list-style-type: none;
+  }
+
+  .header__navigation-item {
+    padding: 12px 28px;
+
+    .header__navigation-item-link {
+      text-decoration: none;
+      color: var(--color)
+    }
+
+    .header__navigation-item-link_active {
+      color: var(--selected-color)
+    }
+  }
+
+  .header__burger-menu {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 100;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color);
+      border-radius: 1.5px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .header__burger-menu_active {
+    span {
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 12px);
+    }
+
+    span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      display: none;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .header__burger-menu_active+.header__navigation {
+    display: block;
+  }
+}
+
+@media (max-width: 860px) {
+
+  :root {
+    --header-height: 63px
+  }
+
+  .header {
+    padding-top: 32px;
+
+    .header__burger-menu {
+      display: flex;
+    }
+
+    .header__navigation {
+      display: none;
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - var(--header-height));
+      background: var(--background);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.3s ease;
+      z-index: 99;
+    }
+
+    .header__navigation-items {
+      margin-top: 50px;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    .header__navigation-item {
+      margin-bottom: 16px;
+    }
+  }
+}

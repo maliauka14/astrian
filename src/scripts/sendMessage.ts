@@ -5,6 +5,10 @@ const messages = {
   wrongEmail: "Invalid Email address",
 } as const;
 
+const escapeMarkdown = (text: string) => {
+  return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+};
+
 const submitForm = (event: SubmitEvent) => {
   event.preventDefault();
   const form = event.target as HTMLFormElement;
@@ -47,12 +51,20 @@ const submitForm = (event: SubmitEvent) => {
 
     const token = "7033492975:AAHN9ObTm47pDQvd6z8dN517YgFhYBFq3YQ";
     const chatId = "787697525";
-    const text = JSON.stringify(formDataObject);
-
+    const text =
+      `📩 *New message*\n\n` +
+      `*From:* ${escapeMarkdown(formDataObject.name as string)}` +
+      `\n*Email:* ${escapeMarkdown(formDataObject.email as string)}` +
+      `${
+        formDataObject.company
+          ? `\n*Company:* ${escapeMarkdown(formDataObject.company as string)}`
+          : ""
+      }` +
+      `\n\n*Message:*\n${escapeMarkdown(formDataObject.message as string)}`;
     fetch(
       `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
         text
-      )}`
+      )}&parse_mode=MarkdownV2`
     )
       .then(() => {
         alert("Успешно отправлено!");

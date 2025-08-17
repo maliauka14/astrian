@@ -1,0 +1,141 @@
+.countries {
+  .countries__title-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .countries__title {
+    max-width: 500px;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: clamp(32px, 6vw, 56px);
+    line-height: 110%;
+    /* font-size: 56px;
+    line-height: 64px; */
+    letter-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+
+  }
+
+  .countries__logo-wrapper {
+    max-width: 700px;
+    position: relative;
+  }
+
+  .countries__logo {
+    width: 100%;
+  }
+
+  .countries__logo-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .countries__content {
+    margin-top: 48px;
+    gap: 20px;
+  }
+
+  .countries__country {
+    border-radius: 16px;
+    background-color: var(--marked-background);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 30px;
+  }
+
+  .countries__country-name {
+    font-family: Quicksand;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 2%;
+    white-space: nowrap;
+  }
+
+  .countries__country-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .countries__top-content,
+  .countries__bottom-content {
+    display: flex;
+    gap: 20px;
+  }
+
+  .countries__top-content-wrapper,
+  .countries__bottom-content-wrapper {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .countries {
+
+    .countries__title-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 56px
+    }
+
+    .countries__title {
+      max-width: 460px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .countries__logo-wrapper {
+      align-self: flex-end;
+      margin-top: -60px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .countries {
+    .countries__country-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .countries__country {
+      border-radius: 8px;
+      gap: 6px;
+      padding: 8px 16px;
+    }
+
+    .countries__logo-wrapper {
+      margin-top: -30px;
+    }
+
+    .countries__country-name {
+      font-size: 12px;
+    }
+
+    .countries__title {
+      max-width: 80%;
+    }
+
+    .countries__top-content,
+    .countries__bottom-content {
+      gap: 10px;
+    }
+
+    .countries__top-content-wrapper,
+    .countries__bottom-content-wrapper {
+      gap: 10px;
+    }
+
+    .countries__content {
+      margin-top: 24px;
+    }
+  }
+}

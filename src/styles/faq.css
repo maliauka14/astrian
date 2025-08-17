@@ -1,0 +1,110 @@
+.faq {
+  .faq__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+
+  .faq__accordion {
+    border-radius: 20px;
+    box-shadow: 0px 1px 12px 0px #FFD7001A;
+    border: 1px solid #FEE80138;
+    backdrop-filter: blur(40px);
+    cursor: pointer;
+  }
+
+  .faq__accordion .accordion__details[open] .accordion__summary {
+    background-color: var(--marked-background);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px
+  }
+
+  .faq__accordion .accordion__details[open] .faq__accordion-title::before {
+    opacity: 0;
+  }
+
+  .faq__accordion .accordion__details[open]+.accordion__content {
+    background-color: var(--marked-background);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px
+  }
+
+  .faq__accordion:has(.accordion__details[open]) {
+    border-color: transparent;
+  }
+
+  .faq__accordion-title {
+    padding: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 66px;
+    letter-spacing: 0;
+    position: relative;
+    display: block;
+  }
+
+  .faq__accordion-title::before {
+    content: "";
+    position: absolute;
+    height: 19px;
+    width: 2px;
+    border-radius: 1px;
+    background-color: #FFFFFF;
+    right: 39px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .faq__accordion-title::after {
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 2px;
+    border-radius: 1px;
+    right: 30px;
+    top: 50%;
+    background-color: #FFFFFF;
+    transform: translateY(-50%);
+  }
+
+
+  .faq__accordion-description {
+    margin: 24px;
+    margin-top: -8px;
+    padding-left: 8px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: #A0A0A0
+  }
+}
+
+
+@media (max-width: 760px) {
+  .faq {
+
+    .faq__content {
+      margin-top: 24px;
+    }
+
+    .faq__accordion-title {
+      padding-right: 60px;
+      font-size: 20px;
+      line-height: 29px;
+    }
+
+    .faq__accordion-description {
+      margin-top: 0;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

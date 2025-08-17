@@ -1,0 +1,149 @@
+.hero {
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  position: relative;
+
+  &::before {
+    content: "";
+  }
+
+
+  .hero__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero__title-wrapper {
+    margin-left: 14px;
+    z-index: 2;
+  }
+
+  .hero__title {
+    width: max-content;
+    margin: 0;
+    font-weight: 400;
+    font-family: SF Pro;
+    font-size: clamp(48px, 9vw, 89px);
+    line-height: 100%;
+    letter-spacing: -0.89px;
+    vertical-align: middle;
+
+    mark {
+      background: transparent;
+      color: #A594FD;
+      display: block
+    }
+  }
+
+  .hero__subtitle {
+    max-width: 60%;
+    margin: 0;
+    margin-top: 22px;
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: clamp(10px, 4vw, 20px);
+    line-height: clamp(10px, 5vw, 34px);
+    letter-spacing: 0;
+    vertical-align: middle;
+
+  }
+
+  .hero__company-info {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero__connect-button {
+    margin-top: 22px;
+  }
+
+  .hero__highlights {
+    display: flex;
+    gap: 62px;
+    align-items: center;
+    margin-top: -20px;
+  }
+
+  .hero__highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    mark {
+      background-color: transparent;
+      color: var(--color);
+      font-family: Inter;
+      font-weight: 600;
+      font-style: 'Semi Bold';
+      font-size: clamp(24px, 4.5vw, 42px);
+    }
+  }
+
+  .hero__animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .hero {
+    .hero__subtitle {
+      max-width: 70%;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .hero {
+    .hero__highlights {
+      gap: 36px;
+    }
+
+    .hero__highlight {
+      gap: 16px;
+    }
+  }
+}
+
+
+@media (max-width: 670px) {
+  .hero {
+    padding-bottom: 4px;
+
+    .hero__title-wrapper {
+      margin-left: 0;
+    }
+
+    .hero__subtitle {
+      max-width: 90%;
+    }
+
+    .hero__company-info {
+      flex-direction: row-reverse;
+      margin-top: 32px;
+    }
+
+    .social-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hero__highlights {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

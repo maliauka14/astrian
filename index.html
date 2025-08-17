@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="stylesheet" href="src/styles/header.css" />
+    <link rel="stylesheet" href="src/styles/footer.css" />
+    <link rel="stylesheet" href="src/styles/partners.css" />
+    <link rel="stylesheet" href="src/styles/faq.css" />
+    <link rel="stylesheet" href="src/styles/countries.css" />
+    <link rel="stylesheet" href="src/styles/collaboration.css" />
+    <link rel="stylesheet" href="src/styles/contact-redirect.css" />
+    <link rel="stylesheet" href="src/styles/text-caroucel.css" />
+    <link rel="stylesheet" href="src/styles/information.css" />
+    <link rel="stylesheet" href="src/styles/hero.css" />
+    <link rel="stylesheet" href="src/styles/products.css" />
+    <link rel="stylesheet" href="src/styles/contact.css" />
+    <link rel="stylesheet" href="src/styles/technologies.css" />
+
     <link rel="stylesheet" href="src/styles/normalize.css" />
     <link rel="stylesheet" href="src/styles/fonts.css" />
 
@@ -12,6 +26,12 @@
   <body>
     <header class="header wrapper">
       <img class="header__logo" src="./src/assets/logo.png" alt="logo" />
+
+      <div class="header__burger-menu" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav class="header__navigation">
         <ul class="header__navigation-items">
           <li class="header__navigation-item">
@@ -44,10 +64,10 @@
             <mark class="hero__title_marked"> Mobile apps </mark>
             Development
           </h1>
-          <h3 class="hero__subtitle">
+          <h2 class="hero__subtitle">
             We craft high-performance, user-friendly mobile apps that drive
             engagement, solve problems, and grow your business.
-          </h3>
+          </h2>
           <button
             class="connect-button hero__connect-button"
             aria-controls="modal"
@@ -72,9 +92,9 @@
         </div>
       </div>
     </section>
-    <section id="products" class="strengths wrapper">
+    <section id="products" class="strengths indent wrapper">
       <h2 class="section-title">Expertise in Action</h2>
-      <div class="tablist strengths__tablist" role="tablist">
+      <div class="tablist strengths__tablist hidden-scroll" role="tablist">
         <button
           id="tab1"
           role="tab"
@@ -618,7 +638,7 @@
         </div>
       </div>
     </section>
-    <section id="partnership" class="collaboration wrapper">
+    <section id="partnership" class="collaboration indent wrapper">
       <h2 class="section-title collaboration__title">
         Discover new opportunities with us
       </h2>
@@ -672,7 +692,7 @@
       </div>
     </section>
 
-    <div class="text-carousel-outer">
+    <div class="text-carousel-outer wrapper">
       <div class="text-carousel">
         <div class="text-carousel__inner animate">
           <div class="text-carousel__wrapper">
@@ -718,7 +738,7 @@
         <img src="./src/assets/svg/arrow.svg" alt="arrow" />
       </button>
     </section>
-    <section class="countries wrapper">
+    <section class="countries indent wrapper">
       <div class="countries__title-content">
         <h2 class="section-title countries__title">
           Our users are all over the world
@@ -1116,7 +1136,7 @@
         </div>
       </div>
     </section>
-    <section id="partners" class="partners wrapper">
+    <section id="partners" class="partners indent wrapper">
       <h2 class="section-title partners__title">Trusted by partners</h2>
       <p class="partners__subtitle">Here’s what companies say about us</p>
       <div class="partners__content hidden-scroll">
@@ -1196,7 +1216,7 @@
         </button>
       </h2>
     </section>
-    <section id="faq" class="faq wrapper">
+    <section id="faq" class="faq indent wrapper">
       <h2 class="section-title">FAQ</h2>
 
       <div class="faq__content">
@@ -1315,25 +1335,25 @@
       </div>
     </section>
 
-    <div class="text-carousel-outer">
+    <div class="text-carousel-outer wrapper">
       <div class="text-carousel">
         <div class="text-carousel__inner animate">
-          <div class="text-carousel__wrapper" style="width: 120%">
+          <div class="text-carousel__wrapper">
             <span class="text-carousel__item"> Simple </span>
             <img
-              class="text-carousel__item"
+              class="text-carousel__item text-carousel__image"
               src="src/assets/svg/rhombus.svg"
               alt="rhombus"
             />
             <span class="text-carousel__item">Clean</span>
             <img
-              class="text-carousel__item"
+              class="text-carousel__item text-carousel__image"
               src="src/assets/svg/rhombus.svg"
               alt="rhombus"
             />
             <span class="text-carousel__item">Effective</span>
             <img
-              class="text-carousel__item"
+              class="text-carousel__item text-carousel__image"
               src="src/assets/svg/rhombus.svg"
               alt="rhombus"
             />
@@ -1342,7 +1362,7 @@
       </div>
     </div>
 
-    <section class="technologies wrapper">
+    <section class="technologies indent wrapper">
       <div class="technologies__icon-wrapper">
         <img
           class="technologies__icon"
@@ -1411,7 +1431,7 @@
         </li>
       </ul>
     </section>
-    <section class="information wrapper">
+    <section class="information indent wrapper">
       <h2 class="section-title information__title">Why to choose Astrian</h2>
       <div class="information__content">
         <div class="information__content-item">

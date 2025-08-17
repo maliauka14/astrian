@@ -15,7 +15,7 @@
     flex-direction: column;
     padding: 48px 8px;
     border-radius: 20px;
-    background-color: #101010;
+    background-color: var(--marked-background);
   }
 
   .collaboration__opportunity-icon-wrapper {

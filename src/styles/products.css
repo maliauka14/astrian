@@ -103,7 +103,9 @@
     width: 440px;
     height: 370px;
     margin: 5px;
+  }
 
+  .strengths__strength-apps:has(> :nth-child(5):not(:nth-child(6))) {
     .strengths__strength-app-link:nth-child(1) {
       top: 0;
       left: 9%;

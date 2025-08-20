@@ -1,4 +1,5 @@
 .hero {
+  overflow: hidden;
   height: calc(100vh - var(--header-height));
   display: flex;
   flex-direction: column;
@@ -39,7 +40,7 @@
   }
 
   .hero__subtitle {
-    max-width: 60%;
+    width: 620px;
     margin: 0;
     margin-top: 22px;
     font-family: Inter;
@@ -60,6 +61,14 @@
 
   .hero__connect-button {
     margin-top: 22px;
+    font-family: SF Pro;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    width: 245px;
+    padding: 18px 0;
+    ;
   }
 
   .hero__highlights {
@@ -100,8 +109,12 @@
 
 @media (max-width: 1000px) {
   .hero {
+    .hero__animation {
+      transform: translateX(100px);
+    }
+
     .hero__subtitle {
-      max-width: 70%;
+      width: 70%;
     }
   }
 }
@@ -123,12 +136,17 @@
   .hero {
     padding-bottom: 4px;
 
+    .hero__animation {
+      transform: translateX(200px);
+    }
+
+
     .hero__title-wrapper {
       margin-left: 0;
     }
 
     .hero__subtitle {
-      max-width: 90%;
+      width: 90%;
     }
 
     .hero__company-info {
@@ -144,6 +162,14 @@
     .hero__highlights {
       flex-direction: column;
       justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    .hero__animation {
+      transform: translateX(300px);
     }
   }
 }

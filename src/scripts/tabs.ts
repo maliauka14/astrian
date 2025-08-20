@@ -3,12 +3,12 @@ export const animateTabs = () => {
   const indicator = document.querySelector<HTMLDivElement>(
     ".strengths__tab-indicator"
   );
-  const tabContents = document.querySelectorAll<HTMLDivElement>(".tablist");
-  let startX = 0;
-  let currentX = 0;
-  let isSwiping = false;
+  const tabsContainer = document.querySelector<HTMLElement>(
+    ".strengths__tablist"
+  );
 
   if (!indicator) throw new Error("Element strengths__tab-indicator not found");
+  if (!tabsContainer) throw new Error("Strengths tabs container not found");
 
   const activateTab = (clickedTab: HTMLButtonElement) => {
     tabs.forEach((tab) => {
@@ -20,6 +20,17 @@ export const animateTabs = () => {
     clickedTab.classList.add("strengths__tab_active");
     clickedTab.setAttribute("aria-selected", "true");
     clickedTab.setAttribute("tabindex", "0");
+
+    const containerWidth = tabsContainer.clientWidth;
+    const tabLeft = clickedTab.offsetLeft;
+    const tabWidth = clickedTab.offsetWidth;
+
+    const targetScroll = tabLeft - (containerWidth - tabWidth) / 2;
+    tabsContainer.scrollTo({
+      left: targetScroll,
+      behavior: "smooth",
+    });
+
     const contentId = clickedTab.getAttribute("aria-controls");
     if (!contentId) return;
     const targetSlide = document.getElementById(contentId);
@@ -31,69 +42,32 @@ export const animateTabs = () => {
       inline: "start",
     });
     window.scrollTo(0, savedScrollY);
-
     updateIndicator(clickedTab);
   };
 
   const updateIndicator = (tab: HTMLButtonElement) => {
-    if (!indicator || !tab.parentElement) return;
+    if (!indicator) return;
+
+    const containerScrollLeft = tabsContainer.scrollLeft;
     const tabRect = tab.getBoundingClientRect();
-    const containerRect = tab.parentElement.getBoundingClientRect();
+    const containerRect = tabsContainer.getBoundingClientRect();
 
     indicator.style.width = `${tabRect.width}px`;
-    indicator.style.left = `${tabRect.left - containerRect.left}px`;
-  };
-
-  const getNextTab = (
-    currentTab: HTMLButtonElement,
-    direction: "left" | "right"
-  ) => {
-    const currentIndex = Array.from(tabs).indexOf(currentTab);
-    let nextIndex;
-
-    if (direction === "left") {
-      nextIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
-    } else {
-      nextIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
-    }
-
-    return tabs[nextIndex];
+    indicator.style.left = `${
+      tabRect.left - containerRect.left + containerScrollLeft
+    }px`;
   };
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => activateTab(tab));
   });
 
-  tabContents.forEach((content) => {
-    content.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-      currentX = startX;
-      isSwiping = true;
-    });
-
-    content.addEventListener("touchmove", (e) => {
-      if (!isSwiping) return;
-      currentX = e.touches[0].clientX;
-    });
-
-    content.addEventListener("touchend", () => {
-      if (!isSwiping) return;
-      isSwiping = false;
-
-      const diffX = startX - currentX;
-      const swipeThreshold = 50;
-
-      if (Math.abs(diffX) > swipeThreshold) {
-        const activeTab = document.querySelector<HTMLButtonElement>(
-          ".strengths__tab_active"
-        );
-        if (activeTab) {
-          const direction = diffX > 0 ? "left" : "right";
-          const nextTab = getNextTab(activeTab, direction);
-          activateTab(nextTab);
-        }
-      }
-    });
+  // Обработчик прокрутки контейнера
+  tabsContainer.addEventListener("scroll", () => {
+    const activeTab = document.querySelector<HTMLButtonElement>(
+      ".strengths__tab_active"
+    );
+    if (activeTab) updateIndicator(activeTab);
   });
 
   const activeTab = document.querySelector<HTMLButtonElement>(

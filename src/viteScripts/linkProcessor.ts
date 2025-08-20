@@ -28,10 +28,6 @@ export default function linkProcessor(mappings: LinkMapping): Plugin {
 
             if (mappings[linkName]) {
               $elem.attr("href", mappings[linkName]);
-
-              console.log(
-                `Replaced href for ${linkName} with ${mappings[linkName]}`
-              );
             } else {
               console.warn(`No mapping found for link name: ${linkName}`);
             }

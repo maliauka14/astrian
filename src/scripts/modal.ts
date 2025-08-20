@@ -11,7 +11,6 @@ export const addModal = () => {
   if (!modalContent) throw new Error("Element modal__content not found");
 
   const contactForm = contactContent.cloneNode(true);
-
   modalContent.innerHTML = "";
   modalContent.appendChild(contactForm);
 

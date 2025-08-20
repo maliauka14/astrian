@@ -26,5 +26,4 @@ export const addHeroLogo = async () => {
     canvas.style.pointerEvents = "auto";
     isScrolling = false;
   }, 250);
-  console.log(isScrolling);
 };

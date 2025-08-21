@@ -1,4 +1,6 @@
 .contact {
+  position: relative;
+  overflow: hidden;
   margin-top: 86px;
   margin-bottom: 148px;
   display: flex;

@@ -5,7 +5,6 @@ import svgo from "vite-plugin-svgo";
 import inlineSvg from "./src/viteScripts/inlineSvg";
 import linkProcessor from "./src/viteScripts/linkProcessor";
 import socialLinksProcessor from "./src/viteScripts/socialLinksProcessor";
-import imageOptimizerPlugin from "./src/viteScripts/imageOptimizer";
 import links from "./src/viteScripts/links.json";
 
 export default defineConfig({
@@ -19,6 +18,6 @@ export default defineConfig({
     createHtmlPlugin({
       minify: true,
     }),
-    imageOptimizerPlugin({ maxSizeKB: 150 }),
+    // imageOptimizerPlugin({ maxSizeKB: 150 }),
   ],
 });

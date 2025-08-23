@@ -1,6 +1,6 @@
 .contact {
-  margin-top: 86px;
-  margin-bottom: 148px;
+  padding-top: 86px;
+  padding-bottom: 148px;
   display: flex;
   justify-content: space-between;
   gap: 24px;

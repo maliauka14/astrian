@@ -1,4 +1,7 @@
 .strengths {
+  padding-top: 140px;
+  padding-bottom: 78px;
+
   .strengths__tablist {
     margin-top: 48px;
     display: flex;

@@ -28,8 +28,10 @@ export default function socialLinksProcessor(): Plugin {
 
           Object.entries(svgPaths).forEach(([name, path]) => {
             const svgContent = readFileSync(path, "utf-8");
-            const li = $(`<li class="social-links__link"></li>`);
-            const a = $(`<a href="https://${name}.com" target="_blank"></a>`);
+            const li = $(`<li class="social-links__item"></li>`);
+            const a = $(
+              `<a class="social-links__link" href="https://${name}.com" target="_blank"></a>`
+            );
             a.html(svgContent);
             li.append(a);
             $container.append(li);

@@ -24,14 +24,14 @@ body {
 
 .wrapper {
   width: 100%;
-  max-width: 1214px;
+  max-width: 1322px;
   padding: 0 16px;
   margin: 0 auto;
 }
 
-.indent {
-  margin-top: 116px;
-  margin-bottom: 116px;
+.default-indent {
+  padding-top: 116px;
+  padding-bottom: 116px;
 }
 
 .social-links {
@@ -40,12 +40,20 @@ body {
   gap: 32px;
   padding: 0;
   margin: 0;
+  height: 32px;
 
-  a {
+  .social-links__link {
     cursor: pointer;
   }
 
-  a:hover {
+  .social-links__item,
+  .social-links__link {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  .social-links__link:hover {
     path {
       stroke: var(--selected-color)
     }
@@ -55,8 +63,8 @@ body {
     }
   }
 
-  .social-links__link:last-child {
-    a:hover {
+  .social-links__item:last-child {
+    .social-links__link:hover {
       path {
         fill: var(--selected-color);
         stroke: none

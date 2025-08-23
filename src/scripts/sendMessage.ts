@@ -61,22 +61,37 @@ const submitForm = (event: SubmitEvent) => {
           : ""
       }` +
       `\n\n*Message:*\n${escapeMarkdown(formDataObject.message as string)}`;
+
+    form.style.opacity = ".5";
     fetch(
       `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
         text
       )}&parse_mode=MarkdownV2`
     )
       .then(() => {
-        alert("Успешно отправлено!");
         form.reset();
+        const snackbar =
+          form.parentNode?.parentNode?.querySelector(".snackbar");
+        const closeButton = snackbar?.querySelector(".snackbar__close-button");
+        const closeButtonFunc = () => {
+          snackbar?.classList.remove("snackbar_active");
+        };
+        closeButton?.addEventListener("click", closeButtonFunc);
+        snackbar?.classList.add("snackbar_active");
+
+        setTimeout(() => {
+          closeButtonFunc();
+          closeButton?.removeEventListener("click", closeButtonFunc);
+        }, 3000);
       })
-      .catch((error) => alert("Ошибка: " + error));
+      .catch((error) => alert("Ошибка: " + error))
+      .finally(() => {
+        form.style.opacity = "1";
+      });
 
     return;
   }
 };
-
-document.addEventListener("DOMContentLoaded", () => {});
 
 export const sendMessage = () => {
   const form = document.querySelector<HTMLFormElement>(".contact__form");

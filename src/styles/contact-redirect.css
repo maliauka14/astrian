@@ -1,7 +1,6 @@
 .contact-redirect {
-  padding-top: 180px;
-  padding-bottom: 180px;
-
+  margin-top: clamp(46px, 12vw, 162px);
+  margin-bottom: clamp(46px, 12vw, 162px);
   max-width: 820px;
   display: flex;
   flex-direction: column;

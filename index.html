@@ -1928,15 +1928,17 @@
           </p>
         </div>
       </div>
-      <div class="information__technologies">
-        <span class="information__technology">Full-stack</span>
-        <span class="information__technology">Multiplatform development</span>
-        <span class="information__technology">UI/UX Design</span>
-        <span class="information__technology">Turnkey</span>
-        <span class="information__technology">AI</span>
-        <span class="information__technology">Support</span>
-        <span class="information__technology">Branding</span>
-        <span class="information__technology">Strategy</span>
+      <div class="information__technologies-wrapper hidden-scroll">
+        <div class="information__technologies">
+          <span class="information__technology">Full-stack</span>
+          <span class="information__technology">Multiplatform development</span>
+          <span class="information__technology">UI/UX Design</span>
+          <span class="information__technology">Turnkey</span>
+          <span class="information__technology">AI</span>
+          <span class="information__technology">Support</span>
+          <span class="information__technology">Branding</span>
+          <span class="information__technology">Strategy</span>
+        </div>
       </div>
     </section>
     <section class="contact wrapper">
@@ -2006,14 +2008,24 @@
 
         <ul class="social-links"></ul>
       </div>
+      <div class="snackbar">
+        <div class="snackbar__content">
+          <img
+            src="src/assets/svg/tick-circle.svg"
+            alt="success circle"
+            class="snackbar__success-button"
+          />
+          <span class="snackbar__message"
+            >The submission has been successfully sent
+          </span>
+          <button class="snackbar__close-button">×</button>
+        </div>
+      </div>
     </section>
 
     <div id="modal" class="modal">
       <div class="modal__container hidden-scroll wrapper">
-        <button class="modal__close-button">
-          <span class="modal__close-button-line"></span>
-          <span class="modal__close-button-line"></span>
-        </button>
+        <button class="modal__close-button">×</button>
         <div class="modal__content"></div>
       </div>
     </div>

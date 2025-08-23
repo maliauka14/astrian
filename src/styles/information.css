@@ -61,11 +61,18 @@
 
   }
 
-
-  .information__technologies {
+  .information__technologies-wrapper {
     max-width: 682px;
     margin: 0 auto;
     margin-top: 56px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .information__technologies {
+    flex-shrink: 0;
+    width: 682px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 12px;

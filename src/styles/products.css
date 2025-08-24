@@ -185,17 +185,19 @@
     }
   }
 
-  .strengths__strength-app-link:hover {
-    z-index: 3;
-    transform: scale(1.1)
-  }
+  @media (hover: hover) {
+    .strengths__strength-app-link:hover {
+      z-index: 3;
+      transform: scale(1.1)
+    }
 
-  .strengths__strength-apps:has(.strengths__strength-app-link:hover)::before {
-    content: "";
-    position: absolute;
-    background: rgba(0, 0, 0, .5);
-    inset: 0;
-    z-index: 2;
+    .strengths__strength-apps:has(.strengths__strength-app-link:hover)::before {
+      content: "";
+      position: absolute;
+      background: rgba(0, 0, 0, .5);
+      inset: 0;
+      z-index: 2;
+    }
   }
 
 

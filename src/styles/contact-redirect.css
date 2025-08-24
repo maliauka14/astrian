@@ -43,14 +43,14 @@
 
 .contact-redirect::after,
 .contact-redirect::before {
-  content: '';
+  /* content: ''; */
   position: absolute;
   opacity: 0.5;
   width: 525px;
   height: 248px;
   transform: rotate(7.01deg);
   background: linear-gradient(22.41deg, rgba(237, 197, 252, 0.7) 11.16%, #D5CAFF 86.4%);
-  filter: blur(240px);
+  filter: blur(350px);
   border-radius: 124px
 }
 

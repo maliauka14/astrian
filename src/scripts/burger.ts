@@ -1,14 +1,17 @@
 export const activateBurger = () => {
   const burger = document.getElementById("burger");
+  const html = document.documentElement;
+  const body = document.body;
 
   burger?.addEventListener("click", () => {
-    const classes = Array.from(burger.classList);
-    if (classes.indexOf("header__burger-menu_active") !== -1) {
+    const isActive = burger.classList.contains("header__burger-menu_active");
+
+    if (isActive) {
       burger.classList.remove("header__burger-menu_active");
-      document.body.style.overflow = "visible";
+      enableScroll();
     } else {
       burger.classList.add("header__burger-menu_active");
-      document.body.style.overflow = "";
+      disableScroll();
     }
   });
 
@@ -16,7 +19,26 @@ export const activateBurger = () => {
   navigationItems.forEach((item) =>
     item.addEventListener("click", () => {
       burger?.classList.remove("header__burger-menu_active");
-      document.body.style.overflow = "";
+      enableScroll();
     })
   );
+
+  const disableScroll = () => {
+    body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.width = "100%";
+    // body.style.top = `-${window.scrollY}px`;
+  };
+
+  const enableScroll = () => {
+    body.style.overflow = "";
+    html.style.overflow = "";
+
+    // const scrollY = body.style.top;
+    body.style.position = "";
+    body.style.width = "";
+    // body.style.top = "";
+    // window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  };
 };

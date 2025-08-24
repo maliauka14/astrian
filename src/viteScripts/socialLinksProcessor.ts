@@ -5,10 +5,22 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 
 const svgPaths = {
-  instagram: resolve(__dirname, "../assets/svg/instagram.svg"),
-  linkedin: resolve(__dirname, "../assets/svg/linkedin.svg"),
-  dribble: resolve(__dirname, "../assets/svg/dribble.svg"),
-  behance: resolve(__dirname, "../assets/svg/behance.svg"),
+  instagram: {
+    path: resolve(__dirname, "../assets/svg/instagram.svg"),
+    url: "https://instagram.com",
+  },
+  linkedin: {
+    path: resolve(__dirname, "../assets/svg/linkedin.svg"),
+    url: "https://linkedin.com",
+  },
+  dribble: {
+    path: resolve(__dirname, "../assets/svg/dribble.svg"),
+    url: "https://dribble.com",
+  },
+  behance: {
+    path: resolve(__dirname, "../assets/svg/behance.svg"),
+    url: "https://behance.com",
+  },
 };
 
 export default function socialLinksProcessor(): Plugin {
@@ -26,11 +38,11 @@ export default function socialLinksProcessor(): Plugin {
           const $container = $(container);
           $container.empty();
 
-          Object.entries(svgPaths).forEach(([name, path]) => {
-            const svgContent = readFileSync(path, "utf-8");
+          Object.entries(svgPaths).forEach(([name, content]) => {
+            const svgContent = readFileSync(content.path, "utf-8");
             const li = $(`<li class="social-links__item"></li>`);
             const a = $(
-              `<a class="social-links__link" href="https://${name}.com" target="_blank"></a>`
+              `<a class="social-links__link" href="${content.url}" target="_blank" aria-label="${name}"></a>`
             );
             a.html(svgContent);
             li.append(a);

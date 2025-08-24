@@ -18,21 +18,22 @@ export const addModal = () => {
     openButton.addEventListener("click", function () {
       modalOverlay.classList.add("modal_active");
       animatedBlocks.forEach((block) => block.classList.add("paused"));
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     });
   });
-
+  console.log(closeModalBtn);
   closeModalBtn?.addEventListener("click", function () {
+    console.log("here");
     modalOverlay.classList.remove("modal_active");
     animatedBlocks.forEach((block) => block.classList.remove("paused"));
-    document.body.style.overflow = "";
+    document.body.style.overflowY = "visible";
   });
 
   modalOverlay.addEventListener("click", function (e) {
     if (e.target === modalOverlay) {
       modalOverlay.classList.remove("modal_active");
       animatedBlocks.forEach((block) => block.classList.remove("paused"));
-      document.body.style.overflow = "";
+      document.body.style.overflowY = "visible";
     }
   });
 
@@ -40,7 +41,7 @@ export const addModal = () => {
     if (event.key === "Escape") {
       modalOverlay.classList.remove("modal_active");
       animatedBlocks.forEach((block) => block.classList.remove("paused"));
-      document.body.style.overflow = "";
+      document.body.style.overflowY = "visible";
     }
   });
 };

@@ -69,7 +69,7 @@ const submitForm = (event: SubmitEvent) => {
       )}&parse_mode=MarkdownV2`
     )
       .then(() => {
-        form.reset();
+        // form.reset();
         const snackbar =
           form.parentNode?.parentNode?.querySelector(".snackbar");
         const closeButton = snackbar?.querySelector(".snackbar__close-button");

@@ -62,15 +62,15 @@
   }
 
   .information__technologies-wrapper {
-    max-width: 682px;
     margin: 0 auto;
     margin-top: 56px;
     overflow-x: auto;
-    display: flex;
-    align-items: center;
+    display: grid;
+    justify-content: center;
   }
 
   .information__technologies {
+    grid-column: 1;
     flex-shrink: 0;
     width: 682px;
     display: flex;
@@ -104,6 +104,10 @@
 
 @media (max-width: 1000px) {
   .information {
+    .information__content {
+      gap: 16px
+    }
+
     .information__content-item {
       padding: 36px 3px 24px 3px;
     }

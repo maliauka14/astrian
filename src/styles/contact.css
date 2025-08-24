@@ -1,6 +1,6 @@
 .contact {
-  padding-top: 86px;
-  padding-bottom: 148px;
+  padding-top: clamp(48px, 9vw, 89px);
+  padding-bottom: clamp(60px, 8.5vw, 148px);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -152,6 +152,68 @@
     letter-spacing: 0;
     vertical-align: middle;
     opacity: .5;
+  }
+}
+
+.snackbar {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  .snackbar__content {
+    padding: 16px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #101010;
+    border-radius: 16px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+  }
+
+  .snackbar__success-button {
+    width: 24px;
+    height: 24px;
+    scale: 1.5;
+    margin-right: 4px;
+  }
+
+  .snackbar__message {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+    vertical-align: middle;
+  }
+
+  .snackbar__close-button {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    color: #9D9DB4;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.snackbar_active {
+  opacity: 1;
+  visibility: visible;
+
+  .snackbar__content {
+    transform: translateX(0);
   }
 }
 

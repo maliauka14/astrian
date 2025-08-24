@@ -13,8 +13,16 @@ export const animateTabs = () => {
   const activateTab = (clickedTab: HTMLButtonElement) => {
     tabs.forEach((tab) => {
       tab.classList.remove("strengths__tab_active");
+      const isActive = tab.getAttribute("aria-selected") === "true";
       tab.setAttribute("aria-selected", "false");
       tab.setAttribute("tabindex", "-1");
+      const contentId = tab.getAttribute("aria-controls");
+      if (isActive && contentId) {
+        const activeContent = document.getElementById(contentId);
+
+        if (activeContent)
+          activeContent.classList.remove("strengths__strength_active");
+      }
     });
 
     clickedTab.classList.add("strengths__tab_active");
@@ -34,14 +42,15 @@ export const animateTabs = () => {
     const contentId = clickedTab.getAttribute("aria-controls");
     if (!contentId) return;
     const targetSlide = document.getElementById(contentId);
-    const savedScrollY = window.scrollY || window.pageYOffset;
+    if (targetSlide) targetSlide.classList.add("strengths__strength_active");
+    // const savedScrollY = window.scrollY || window.pageYOffset;
 
-    targetSlide?.scrollIntoView({
-      behavior: "auto",
-      block: "nearest",
-      inline: "start",
-    });
-    window.scrollTo(0, savedScrollY);
+    // targetSlide?.scrollIntoView({
+    //   behavior: "auto",
+    //   block: "nearest",
+    //   inline: "start",
+    // });
+    // window.scrollTo(0, savedScrollY);
     updateIndicator(clickedTab);
   };
 

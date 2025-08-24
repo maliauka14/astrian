@@ -10,6 +10,7 @@ import links from "./src/viteScripts/links.json";
 export default defineConfig({
   base: "",
   assetsInclude: ["**/*.splinecode"],
+  build: { sourcemap: true },
   plugins: [
     svgo(),
     socialLinksProcessor(),

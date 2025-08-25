@@ -14,12 +14,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 4px);
+  overflow: hidden;
 }
-
 
 body {
   background-color: var(--background);
   color: var(--color);
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .wrapper {
@@ -184,7 +187,6 @@ body {
 
 
   .modal__content {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

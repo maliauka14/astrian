@@ -14,14 +14,13 @@ export const addSlider = () => {
 
   if (!container || !slider || slides.length === 0) return;
 
-  // Сохраняем оригинальное количество слайдов
   const originalSlidesCount = slides.length;
   let currentIndex = 1;
   let touchStartX = 0;
   let touchEndX = 0;
   let dots: HTMLSpanElement[] = [];
   let slideWidth = 0;
-  let gap = 24; // Значение gap между слайдами
+  let gap = parseInt(window.getComputedStyle(slider).gap);
 
   const calculateSlideWidth = () => {
     return slides[0].offsetWidth + gap;
@@ -73,14 +72,19 @@ export const addSlider = () => {
   };
 
   const handleTouchStart = (e: TouchEvent) => {
-    touchStartX = e.touches[0].clientX;
+    e.stopPropagation();
+    e.preventDefault();
   };
 
   const handleTouchMove = (e: TouchEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
     touchEndX = e.touches[0].clientX;
   };
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: TouchEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
     const diff = touchStartX - touchEndX;
     const swipeThreshold = 50;
 
@@ -139,9 +143,15 @@ export const addSlider = () => {
     prevButton?.addEventListener("click", prevSlide);
     nextButton?.addEventListener("click", nextSlide);
 
-    slider.addEventListener("touchstart", handleTouchStart as EventListener);
-    slider.addEventListener("touchmove", handleTouchMove as EventListener);
-    slider.addEventListener("touchend", handleTouchEnd as EventListener);
+    slider.addEventListener("touchstart", handleTouchStart as EventListener, {
+      passive: false,
+    });
+    slider.addEventListener("touchmove", handleTouchMove as EventListener, {
+      passive: false,
+    });
+    slider.addEventListener("touchend", handleTouchEnd as EventListener, {
+      passive: false,
+    });
 
     let resizeTimeout: number;
     window.addEventListener("resize", () => {

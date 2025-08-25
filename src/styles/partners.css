@@ -37,7 +37,8 @@
     background: linear-gradient(22.41deg, #000000 86.4%, rgba(0, 0, 0, 0) 89.83%);
     background-blend-mode: overlay;
     filter: blur(100px);
-    z-index: 10
+    z-index: 10;
+    pointer-events: none;
   }
 
   .partners__content-wrapper::before {

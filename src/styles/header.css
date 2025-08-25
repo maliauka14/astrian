@@ -18,7 +18,7 @@
 
   .header__logo {
     width: 48px;
-    height: 45px;
+    aspect-ratio: calc(48 / 45)
   }
 
   .header__navigation-items {
@@ -91,10 +91,14 @@
   }
 
   .header {
-    padding-top: 32px;
+    padding-top: 24px;
 
     .header__burger-menu {
       display: flex;
+    }
+
+    .header__logo {
+      width: 36px;
     }
 
     .header__navigation {

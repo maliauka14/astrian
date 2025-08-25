@@ -8,6 +8,7 @@ export const addModal = () => {
   const html = document.documentElement;
   const body = document.body;
 
+  let top = 0;
   if (!modalOverlay) throw new Error("Element modal not found");
   if (!contactContent) throw new Error("Element contact not found");
   if (!modalContent) throw new Error("Element modal__content not found");
@@ -17,30 +18,34 @@ export const addModal = () => {
   modalContent.appendChild(contactForm);
 
   const openModal = () => {
+    top = window.scrollY;
     body.style.overflow = "hidden";
     html.style.overflow = "hidden";
     body.style.position = "fixed";
     body.style.width = "100%";
+    body.style.top = `-${top}px`;
     modalOverlay.classList.add("modal_active");
     animatedBlocks.forEach((block) => block.classList.add("paused"));
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
-    body.style.overflow = "";
-    html.style.overflow = "";
+    body.style.overflow = "visible";
+    html.style.overflow = "visible";
 
-    body.style.position = "";
+    body.style.position = "static";
     body.style.width = "";
+    body.style.top = "";
+    window.scrollTo({ top, behavior: "instant" });
     modalOverlay.classList.remove("modal_active");
     animatedBlocks.forEach((block) => block.classList.remove("paused"));
-    document.body.style.overflowY = "";
+    document.body.style.overflow = "visible";
   };
 
   openModalButtons.forEach((openButton) => {
     openButton.addEventListener("click", openModal);
   });
-  console.log(closeModalBtn);
+
   closeModalBtn?.addEventListener("click", closeModal);
 
   modalOverlay.addEventListener("click", function (e) {

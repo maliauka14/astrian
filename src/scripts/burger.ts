@@ -3,6 +3,7 @@ export const activateBurger = () => {
   const html = document.documentElement;
   const body = document.body;
 
+  let top = 0;
   burger?.addEventListener("click", () => {
     const isActive = burger.classList.contains("header__burger-menu_active");
 
@@ -24,21 +25,21 @@ export const activateBurger = () => {
   );
 
   const disableScroll = () => {
+    top = window.scrollY;
     body.style.overflow = "hidden";
     html.style.overflow = "hidden";
     body.style.position = "fixed";
     body.style.width = "100%";
-    // body.style.top = `-${window.scrollY}px`;
+    body.style.top = "0px";
   };
 
   const enableScroll = () => {
-    body.style.overflow = "";
-    html.style.overflow = "";
+    body.style.overflow = "visible";
+    html.style.overflow = "visible";
 
-    // const scrollY = body.style.top;
-    body.style.position = "";
+    body.style.position = "static";
     body.style.width = "";
-    // body.style.top = "";
-    // window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    body.style.top = "";
+    window.scrollTo({ top, behavior: "instant" });
   };
 };

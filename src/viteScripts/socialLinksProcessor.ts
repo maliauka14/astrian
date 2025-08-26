@@ -1,4 +1,3 @@
-// vite-social-links-plugin.ts
 import type { Plugin } from "vite";
 import * as cheerio from "cheerio";
 import { readFileSync } from "fs";

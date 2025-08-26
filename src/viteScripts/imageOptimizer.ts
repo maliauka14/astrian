@@ -1,4 +1,3 @@
-// plugins/image-optimizer.js
 import sharp from "sharp";
 import fs from "fs/promises";
 import path from "path";
@@ -27,7 +26,6 @@ function imageOptimizerPlugin(options: Options) {
     webpQuality = 80,
   } = options;
 
-  // Вспомогательные функции
   const isImageFile = (filename: string) => {
     return /\.(jpg|jpeg|png|webp|avif|gif|bmp|tiff)$/i.test(filename);
   };

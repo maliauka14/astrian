@@ -1,4 +1,3 @@
-// vite-link-processor-plugin.ts
 import type { Plugin } from "vite";
 import type { HtmlTagDescriptor } from "vite";
 import * as cheerio from "cheerio";

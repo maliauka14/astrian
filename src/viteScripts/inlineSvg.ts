@@ -1,4 +1,3 @@
-// vite-inline-svg-plugin.ts
 import { readFileSync } from "fs";
 import path from "path";
 import type { Plugin } from "vite";
@@ -30,7 +29,6 @@ export default function inlineSvg(): Plugin {
             const src = $elem.attr("src");
             if (!src || !ctx?.filename) return;
 
-            // Обработка относительных путей
             const isAbsolutePath = src.startsWith("/");
             const baseDir = path.dirname(ctx.filename);
 
@@ -42,21 +40,17 @@ export default function inlineSvg(): Plugin {
               const svgContent = readFileSync(filePath, "utf-8");
               const $svg = cheerio.load(svgContent, { xmlMode: true })("svg");
 
-              // Перенос атрибутов
               const attributes = $elem.attr();
               Object.entries(attributes).forEach(([name, value]) => {
-                if (name !== "src") {
-                  // Сохраняем все атрибуты кроме src
+                if (!["src", "alt"].includes(name)) {
                   $svg.attr(name, value);
                 }
               });
 
-              // Обработка доступности
               if ($elem.attr("alt") && !$svg.attr("aria-label")) {
                 $svg.attr("aria-label", $elem.attr("alt") || "");
               }
 
-              // Замена элемента
               $elem.replaceWith($svg);
             } catch (error) {
               console.error(`Error inlining SVG: ${filePath}`, error);

@@ -43,14 +43,6 @@ export const animateTabs = () => {
     if (!contentId) return;
     const targetSlide = document.getElementById(contentId);
     if (targetSlide) targetSlide.classList.add("strengths__strength_active");
-    // const savedScrollY = window.scrollY || window.pageYOffset;
-
-    // targetSlide?.scrollIntoView({
-    //   behavior: "auto",
-    //   block: "nearest",
-    //   inline: "start",
-    // });
-    // window.scrollTo(0, savedScrollY);
     updateIndicator(clickedTab);
   };
 
@@ -71,7 +63,6 @@ export const animateTabs = () => {
     tab.addEventListener("click", () => activateTab(tab));
   });
 
-  // Обработчик прокрутки контейнера
   tabsContainer.addEventListener("scroll", () => {
     const activeTab = document.querySelector<HTMLButtonElement>(
       ".strengths__tab_active"

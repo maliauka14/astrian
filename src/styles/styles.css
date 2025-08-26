@@ -25,6 +25,10 @@ body {
   width: 100%;
 }
 
+main {
+  overflow-x: hidden !important;
+}
+
 .wrapper {
   width: 100%;
   max-width: 1322px;

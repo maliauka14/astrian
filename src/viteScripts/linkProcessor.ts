@@ -28,6 +28,9 @@ export default function linkProcessor(mappings: LinkMapping): Plugin {
             if (mappings[linkName]) {
               $elem.attr("href", mappings[linkName]);
             } else {
+              $elem.attr("onclick", "return false;");
+              $elem.attr("style", "cursor: auto; opacity: 0.6;");
+              $elem.addClass("link-disabled");
               console.warn(`No mapping found for link name: ${linkName}`);
             }
           });

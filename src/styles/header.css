@@ -1,7 +1,6 @@
 .header {
-
+  height: var(--header-height);
   position: sticky;
-
   top: 0;
   background-color: var(--background);
   z-index: 99;
@@ -12,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: var(--header-height);
+    height: 100%;
   }
 
   .header__logo-wrapper {
@@ -48,11 +47,17 @@
     display: none;
     position: relative;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 24px;
-    height: 16px;
+    height: 24px;
     cursor: pointer;
     z-index: 100;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    gap: 4px;
 
     span {
       display: block;
@@ -105,7 +110,9 @@
   }
 
   .header {
-    padding-top: 24px;
+    .header__wrapper {
+      padding-top: 24px;
+    }
 
     .header__burger-menu {
       display: flex;

@@ -3,7 +3,6 @@
   --background: #000000;
   --color: #FFFFFF;
   --header-height: 83px;
-  --scroll-padding: calc(var(--header-height) + 4px);
   --marked-background: #101010
 }
 
@@ -14,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--scroll-padding);
+  scroll-padding-top: 16px;
   overflow: hidden;
 }
 

@@ -8,42 +8,33 @@ export const activateHeaderLink = () => {
   const headerLinks = document.querySelectorAll<HTMLLinkElement>(
     ".header__navigation-item-link"
   );
-  const sections: Section[] = [];
+  let sections: Section[] = [];
+  const scrollPaddingValue = 16;
+  const reserveValue = 64;
 
-  const rootStyles = getComputedStyle(document.documentElement);
-  const scrollPaddingValue = rootStyles
-    .getPropertyValue("--scroll-padding")
-    .trim();
-
-  const tempElement = document.createElement("div");
-  tempElement.style.position = "absolute";
-  tempElement.style.visibility = "hidden";
-  tempElement.style.height = scrollPaddingValue;
-  document.body.appendChild(tempElement);
-
-  const scrollPadding = parseInt(getComputedStyle(tempElement).height, 10) || 0;
-  document.body.removeChild(tempElement);
-  const visualDiff = 20;
-
-  headerLinks.forEach((link) => {
-    const targetId = link.getAttribute("href");
-    if (targetId) {
-      const section = document.querySelector<HTMLElement>(targetId);
-      if (section) {
-        sections.push({
-          id: targetId,
-          element: section,
-          link: link,
-        });
+  const updateSections = () => {
+    sections = [];
+    headerLinks.forEach((link) => {
+      const targetId = link.getAttribute("href");
+      if (targetId) {
+        const section = document.querySelector<HTMLElement>(targetId);
+        if (section) {
+          sections.push({
+            id: targetId,
+            element: section,
+            link: link,
+          });
+        }
       }
-    }
-  });
+    });
+  };
 
   const checkActiveSection = () => {
     const scrollPosition = window.scrollY;
-
     sections.forEach((section) => {
-      const sectionTop = section.element.offsetTop - scrollPadding - visualDiff;
+      const rect = section.element.getBoundingClientRect();
+      const sectionTop =
+        window.scrollY + rect.top - scrollPaddingValue - reserveValue;
       const sectionHeight = section.element.offsetHeight;
 
       if (
@@ -58,6 +49,9 @@ export const activateHeaderLink = () => {
     });
   };
 
+  updateSections();
   checkActiveSection();
+
+  window.addEventListener("resize", updateSections);
   window.addEventListener("scroll", checkActiveSection);
 };

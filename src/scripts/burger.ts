@@ -1,17 +1,19 @@
 export const activateBurger = () => {
   const burger = document.getElementById("burger");
+  const header = document.getElementById("header");
   const html = document.documentElement;
   const body = document.body;
 
   let top = 0;
   burger?.addEventListener("click", () => {
-    const isActive = burger.classList.contains("header__burger-menu_active");
+    if (!header) return;
+    const isActive = header.classList.contains("header_collapsed");
 
     if (isActive) {
-      burger.classList.remove("header__burger-menu_active");
+      header.classList.remove("header_collapsed");
       enableScroll();
     } else {
-      burger.classList.add("header__burger-menu_active");
+      header.classList.add("header_collapsed");
       disableScroll();
     }
   });
@@ -19,8 +21,8 @@ export const activateBurger = () => {
   const navigationItems = document.querySelectorAll(".header__navigation-item");
   navigationItems.forEach((item) =>
     item.addEventListener("click", () => {
-      if (burger?.classList.contains("header__burger-menu_active")) {
-        burger?.classList.remove("header__burger-menu_active");
+      if (header?.classList.contains("header_collapsed")) {
+        header?.classList.remove("header_collapsed");
         enableScroll();
       }
     })

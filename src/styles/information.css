@@ -20,16 +20,6 @@
     border-radius: 20px
   }
 
-  .information__content-item:hover {
-    background: linear-gradient(80.72deg, #7E6BC7 0%, #D5CAFF 95.64%);
-    color: var(--marked-background);
-
-    .information__content-item-description {
-      color: #000000;
-      opacity: 0.6
-    }
-  }
-
   .information__content-item-image {
     width: 128px;
     aspect-ratio: 1;
@@ -95,10 +85,23 @@
     padding: 12px 26px;
   }
 
-  .information__technology:hover {
-    background: linear-gradient(80.72deg, #7E6BC7 0%, #D5CAFF 95.64%);
-    color: #000000;
+  @media(hover: hover) {
+    .information__technology:hover {
+      background: linear-gradient(80.72deg, #7E6BC7 0%, #D5CAFF 95.64%);
+      color: #000000;
+    }
+
+    .information__content-item:hover {
+      background: linear-gradient(80.72deg, #7E6BC7 0%, #D5CAFF 95.64%);
+      color: var(--marked-background);
+
+      .information__content-item-description {
+        color: #000000;
+        opacity: 0.6
+      }
+    }
   }
+
 }
 
 

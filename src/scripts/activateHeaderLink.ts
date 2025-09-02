@@ -1,6 +1,6 @@
 interface Section {
   id: string;
-  element: HTMLOptionElement;
+  element: HTMLElement;
   link: HTMLLinkElement;
 }
 
@@ -10,10 +10,25 @@ export const activateHeaderLink = () => {
   );
   const sections: Section[] = [];
 
+  const rootStyles = getComputedStyle(document.documentElement);
+  const scrollPaddingValue = rootStyles
+    .getPropertyValue("--scroll-padding")
+    .trim();
+
+  const tempElement = document.createElement("div");
+  tempElement.style.position = "absolute";
+  tempElement.style.visibility = "hidden";
+  tempElement.style.height = scrollPaddingValue;
+  document.body.appendChild(tempElement);
+
+  const scrollPadding = parseInt(getComputedStyle(tempElement).height, 10) || 0;
+  document.body.removeChild(tempElement);
+  const visualDiff = 20;
+
   headerLinks.forEach((link) => {
     const targetId = link.getAttribute("href");
     if (targetId) {
-      const section = document.querySelector<HTMLOptionElement>(targetId);
+      const section = document.querySelector<HTMLElement>(targetId);
       if (section) {
         sections.push({
           id: targetId,
@@ -28,7 +43,7 @@ export const activateHeaderLink = () => {
     const scrollPosition = window.scrollY;
 
     sections.forEach((section) => {
-      const sectionTop = section.element.offsetTop;
+      const sectionTop = section.element.offsetTop - scrollPadding - visualDiff;
       const sectionHeight = section.element.offsetHeight;
 
       if (

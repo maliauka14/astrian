@@ -33,48 +33,52 @@
         <div></div>
       </div>
     </div>
-    <header class="header wrapper">
-      <div class="header__logo-wrapper">
-        <img
-          class="header__logo"
-          src="./src/assets/logo_icon.png"
-          alt="logo icon"
-        />
-        <img src="./src/assets/logo.png" alt="logo" />
-      </div>
+    <header class="header">
+      <div class="header__wrapper wrapper">
+        <div class="header__logo-wrapper">
+          <img
+            class="header__logo"
+            src="./src/assets/logo_icon.png"
+            alt="logo icon"
+          />
+          <img src="./src/assets/svg/logo.svg" alt="logo" />
+        </div>
 
-      <div class="header__burger-menu" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="header__burger-menu" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="header__navigation">
+          <ul class="header__navigation-items">
+            <li class="header__navigation-item">
+              <a
+                class="header__navigation-item-link header__navigation-item-link_active"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="header__navigation-item">
+              <a class="header__navigation-item-link" href="#products"
+                >Our products</a
+              >
+            </li>
+            <li class="header__navigation-item">
+              <a class="header__navigation-item-link" href="#partnership"
+                >Partnership</a
+              >
+            </li>
+            <li class="header__navigation-item">
+              <a class="header__navigation-item-link" href="#partners"
+                >Reviews</a
+              >
+            </li>
+            <li class="header__navigation-item">
+              <a class="header__navigation-item-link" href="#faq">FAQ</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="header__navigation">
-        <ul class="header__navigation-items">
-          <li class="header__navigation-item">
-            <a
-              class="header__navigation-item-link header__navigation-item-link_active"
-              href="#home"
-              >Home</a
-            >
-          </li>
-          <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#products"
-              >Our products</a
-            >
-          </li>
-          <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#partnership"
-              >Partnership</a
-            >
-          </li>
-          <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#partners">Reviews</a>
-          </li>
-          <li class="header__navigation-item">
-            <a class="header__navigation-item-link" href="#faq">FAQ</a>
-          </li>
-        </ul>
-      </nav>
     </header>
     <main>
       <section id="home" class="hero wrapper">
@@ -1483,7 +1487,7 @@
 
         <div class="faq__content">
           <div class="accordion faq__accordion">
-            <details open class="accordion__details">
+            <details class="accordion__details">
               <summary class="accordion__summary">
                 <span
                   class="accordion__title faq__accordion-title"
@@ -1607,90 +1611,64 @@
         </div>
 
         <h2 class="section-title technologies__title">Our technologies</h2>
-        <div class="technologies__content-wrapper">
-          <span
-            class="technologies__content-divider technologies__content-vertical-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-vertical-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-vertical-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-vertical-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-vertical-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-horizontal-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-horizontal-divider"
-          ></span>
-          <span
-            class="technologies__content-divider technologies__content-horizontal-divider"
-          ></span>
-          <ul class="technologies__content">
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/swift.svg"
-                alt="swift"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">Swift</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/react.svg"
-                alt="react_native"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">React Native</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/flutter.svg"
-                alt="flutter"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">Flutter</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/kotlin.svg"
-                alt="kotlin"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">Kotlin</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/firebase.svg"
-                alt="firebase"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">Firebase</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/nodejs.svg"
-                alt="node"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">Node.js</span>
-            </li>
-            <li class="technologies__technology">
-              <img
-                src="./src/assets/svg/rest.svg"
-                alt="rest"
-                class="technologies__technology-icon"
-              />
-              <span class="technologies_technology-name">REST API</span>
-            </li>
-          </ul>
-        </div>
+        <ul class="technologies__content">
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/swift.svg"
+              alt="swift"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">Swift</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/react.svg"
+              alt="react_native"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">React Native</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/flutter.svg"
+              alt="flutter"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">Flutter</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/kotlin.svg"
+              alt="kotlin"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">Kotlin</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/firebase.svg"
+              alt="firebase"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">Firebase</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/nodejs.svg"
+              alt="node"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">Node.js</span>
+          </li>
+          <li class="technologies__technology">
+            <img
+              src="./src/assets/svg/rest.svg"
+              alt="rest"
+              class="technologies__technology-icon"
+            />
+            <span class="technologies_technology-name">REST API</span>
+          </li>
+        </ul>
       </section>
       <section class="information default-indent wrapper">
         <h2 class="section-title information__title">Why to choose Astrian</h2>
@@ -1849,7 +1827,7 @@
           src="./src/assets/logo_icon.png"
           alt="logo icon"
         />
-        <img src="./src/assets/logo.png" alt="logo" />
+        <img src="./src/assets/svg/logo.svg" alt="logo" />
       </div>
 
       <div class="footer__links-content">

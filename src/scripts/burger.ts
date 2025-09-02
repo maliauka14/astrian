@@ -19,8 +19,10 @@ export const activateBurger = () => {
   const navigationItems = document.querySelectorAll(".header__navigation-item");
   navigationItems.forEach((item) =>
     item.addEventListener("click", () => {
-      burger?.classList.remove("header__burger-menu_active");
-      enableScroll();
+      if (burger?.classList.contains("header__burger-menu_active")) {
+        burger?.classList.remove("header__burger-menu_active");
+        enableScroll();
+      }
     })
   );
 

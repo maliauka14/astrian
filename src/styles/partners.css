@@ -60,11 +60,11 @@
   }
 
   .partners__content-slide-left-arrow {
-    left: 0;
+    left: 40px;
   }
 
   .partners__content-slide-right-arrow {
-    right: 0;
+    right: 40px;
 
     .partners__slide-arrow {
       transform: rotate(180deg);

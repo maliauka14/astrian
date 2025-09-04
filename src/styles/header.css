@@ -6,8 +6,6 @@
   z-index: 99;
 
   .header__wrapper {
-    padding-top: 32px;
-    padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;

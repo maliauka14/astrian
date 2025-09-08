@@ -49,8 +49,8 @@ const submitForm = (event: SubmitEvent) => {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData.entries());
 
-    const token = "7033492975:AAHN9ObTm47pDQvd6z8dN517YgFhYBFq3YQ";
-    const chatId = "787697525";
+    const token = "8498593670:AAEONv451HOH33H5dXKcuaoQhv_2VZ4R-04";
+    const chatId = "7718762023";
     const text =
       `📩 *New message*\n\n` +
       `*From:* ${escapeMarkdown(formDataObject.name as string)}` +

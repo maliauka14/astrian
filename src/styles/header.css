@@ -33,7 +33,8 @@
 
     .header__navigation-item-link {
       text-decoration: none;
-      color: var(--color)
+      color: var(--color);
+      font-family: Plus Jakarta Sans;
     }
 
     .header__navigation-item-link_active {

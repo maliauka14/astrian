@@ -6,19 +6,19 @@ import { resolve } from "path";
 const svgPaths = {
   instagram: {
     path: resolve(__dirname, "../assets/svg/instagram.svg"),
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/astrian.tech?igsh=NTJweGo5OWVtaXFw  ",
   },
   linkedin: {
     path: resolve(__dirname, "../assets/svg/linkedin.svg"),
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/company/109077365/admin/dashboard/",
   },
   dribble: {
     path: resolve(__dirname, "../assets/svg/dribble.svg"),
-    url: "https://dribble.com",
+    url: "https://dribbble.com/b85439be93b3",
   },
   behance: {
     path: resolve(__dirname, "../assets/svg/behance.svg"),
-    url: "https://behance.com",
+    url: "https://www.behance.net/astriantech",
   },
 };
 

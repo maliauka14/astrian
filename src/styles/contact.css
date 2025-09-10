@@ -12,7 +12,7 @@
   }
 
   .contact__form-content-title {
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 300;
     font-style: Light;
     font-size: clamp(48px, 9vw, 89px);
@@ -24,7 +24,7 @@
   }
 
   .contact__form-content-description {
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 400;
     font-style: Regular;
     font-size: 20px;
@@ -55,7 +55,7 @@
   }
 
   .contact__form-error-message {
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 300;
     font-style: Light;
     font-size: 16px;
@@ -97,7 +97,7 @@
 
   .contact__steps-title {
     margin: 0;
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 600;
     font-style: Semi Bold;
     font-size: 38px;
@@ -116,7 +116,7 @@
     position: relative;
     margin-top: 42px;
     display: block;
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 500;
     font-style: Medium;
     font-size: 26px;
@@ -144,7 +144,7 @@
   .steps__step-description {
     margin: 0;
     margin-top: 31px;
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 400;
     font-style: Regular;
     font-size: 18px;
@@ -184,7 +184,7 @@
   }
 
   .snackbar__message {
-    font-family: Inter;
+    font-family: Plus Jakarta Sans;
     font-weight: 400;
     font-style: Regular;
     font-size: 14px;

@@ -17,7 +17,7 @@
   }
 
   .footer__text {
-    font-family: SF Pro;
+    font-family: Plus Jakarta Sans;
     font-weight: 400;
     font-style: Regular;
     font-size: 17px;
@@ -28,10 +28,16 @@
   }
 
   .footer__gmail {
+    font-family: Inter;
     margin-left: auto;
-    color: #EFEDFD99;
     font-size: 14px;
     justify-self: end;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: #EFEDFD99;
+    }
   }
 
   .footer__links-content {

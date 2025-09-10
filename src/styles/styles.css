@@ -88,7 +88,7 @@ main {
   padding: 18px 59px;
   color: var(--background);
   background: var(--selected-color);
-  font-family: Inter;
+  font-family: Plus Jakarta Sans;
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
@@ -103,7 +103,7 @@ main {
   padding: 0;
   margin: 0;
   margin-top: 16px;
-  font-family: SF Pro;
+  font-family: Plus Jakarta Sans;
   font-weight: 400;
   font-style: Regular;
   font-size: clamp(32px, 8vw, 76px);
